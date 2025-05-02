@@ -1,0 +1,1048 @@
+{
+    "label": {
+        "name": "নাম",
+        "email": "ইমেইল",
+        "slug": "স্লাগ",
+        "status": "স্ট্যাটাস",
+        "mobileNumber": "মোবাইল নম্বর",
+        "address": "ঠিকানা",
+        "note": "নোট",
+        "division": "বিভাগ",
+        "district": "জেলা",
+        "upazila": "উপজেলা",
+        "union": "ইউনিয়ন",
+        "village": "গ্রাম",
+        "actions": "অ্যাকশন",
+        "date": "তারিখ",
+        "rate": "দর",
+        "createdBy": "যে তৈরি করেছে",
+        "paymentStatus": "পেমেন্ট স্ট্যাটাস",
+        "transactionId": "লেনদেন আইডি",
+        "buyer": "ক্রেতা",
+        "totalTransaction": "স‍র্বেমাট লেনদেন",
+        "totalPayment": "স‍র্বেমাট জমা",
+        "totalDue": "স‍র্বেমাট বাকি",
+        "smsType": "এসএমএস ধরণ",
+        "message": "বার্তা",
+        "errorMessage": "ত্রুটি বার্তা",
+        "smsCount": "এসএমএস সংখ্যা",
+        "transaction": "লেনদেন সমূহ",
+        "invoiceNumber": "চালান নাম্বার",
+        "editItem": "এডিট আইটেম",
+        "items": "পণ্যসমূহ",
+        "itemName": "পণ্যের নাম",
+        "box": "বক্স",
+        "poly": "পলি",
+        "mir": "মির",
+        "quantity": "পরিমাণ",
+        "unitPrice": "দর",
+        "totalPrice": "মোট টাকা",
+        "totalAmount": "মোট দাম",
+        "total": "মোট",
+        "discountAmount": "ছাড়",
+        "grandTotal": "মোট টাকা",
+        "due": "জের",
+        "paid": "জমা",
+        "brand": "ব্রান্ড",
+        "description": "বিবরণ",
+        "receiverSignature": "গ্রহীতার সাক্ষর",
+        "producerSignature": "প্রস্তুুতকারীর সাক্ষর",
+        "employeeSignature": "ক‍র্মক‍র্তার সাক্ষর"
+    },
+
+    "placeholder": {
+        "name": "নাম",
+        "email": "ইমেইল",
+        "slug": "স্লাগ",
+        "status": "স্ট্যাটাস",
+        "mobileNumber": "মোবাইল নম্বর",
+        "address": "ঠিকানা",
+        "note": "নোট",
+        "division": "বিভাগ",
+        "district": "জেলা",
+        "upazila": "উপজেলা",
+        "union": "ইউনিয়ন",
+        "village": "গ্রাম",
+        "date": "তারিখ",
+        "rate": "দর",
+        "invoiceNumber": "চালান নাম্বার",
+        "selectBrand": "ব্রান্ড নি‍র্বাচন",
+        "box": "বক্স",
+        "poly": "পলি",
+        "mir": "মির",
+        "quantity": "পরিমাণ",
+        "unitPrice": "দর",
+        "totalPrice": "স‍র্বেমাট"
+    },
+
+    "buttonValue": {
+        "submit": "সাবমিট",
+        "update": "আপডেট",
+        "filter": "ফিল্টার",
+        "reset": "রিসেট",
+        "apply": "অ্যাপ্লাই",
+        "edit": "এডিট",
+        "login": "লগইন",
+        "logout": "লগআউট",
+        "discard": "বাতিল",
+        "actions": "অ্যাকশন",
+        "confirm": "কনফার্ম",
+        "cancel": "বাতিল",
+        "signIn": "সাইন ইন",
+        "signOut": "সাইন আউট",
+        "resetPassword": "রিসেট পাসওয়ার্ড",
+        "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন",
+        "resendVerificationEmail": "পুনরায় ভেরিফিকেশন ইমেইল পাঠান",
+        "verifyOTP": "ওটিপি যাচাই করুন",
+        "resendVerificationSMS": "পুনরায় ভেরিফিকেশন এসএমএস পাঠান",
+        "renewSubscription": "রিনিউ সাবসক্রিপশন",
+        "changePlan": "প্ল্যান পরিবর্তন",
+        "select": "সিলেক্ট",
+        "pay": "পেমেন্ট করুন",
+        "addPayment": "জমা যোগ করুন",
+        "printInvoice":"প্রিন্ট ইনভয়েস"
+    },
+
+    "validation": {
+        "item": {
+            "required": "আইটেম আবশ্যক."
+        },
+        "brand": {
+            "required": "ব্র্যান্ড আবশ্যক"
+        },
+        "totalPoly": {
+            "numeric": "বাক্সের সংখ্যা অবশ্যই একটি বৈধ সংখ্যা হতে হবে।",
+            "greater": "পলির সংখ্যা 0 বা ঋণাত্মক হতে পারে না।"
+        },
+        "mir": {
+            "numeric": "মির প্রয়োজন।",
+            "greater": "মির 0 বা ঋণাত্মক হতে পারে না।"
+        },
+        "quantity": {
+            "numeric": "পরিমাণ প্রয়োজন।",
+            "greater": "পরিমাণ 0 বা ঋণাত্মক হতে পারে না।"
+        },
+        "unitPrice": {
+            "numeric": "একক মূল্য অবশ্যই একটি বৈধ সংখ্যা হতে হবে।",
+            "greater": "একক মূল্য 0 বা ঋণাত্মক হতে পারে না।"
+        },
+        "totalPrice": {
+            "numeric": "মোট মূল্য অবশ্যই একটি বৈধ সংখ্যা হতে হবে।",
+            "greater": "মোট মূল্য 0 বা ঋণাত্মক হতে পারে না।"
+        }
+
+    },
+
+    "header": {
+        "paymentMethod": "পেমেন্ট পদ্ধতি",
+        "paymentConfirmation": "পেমেন্ট নিশ্চিতকরণ",
+        "transactions": "লেনদেন সমূহ",
+        "payment": "জমা",
+        "atGlance": "এক নজরে"
+    },
+    "configuration": {
+        "label": {
+            "companyName": "প্রতিষ্ঠানের নাম (ইংরেজি)",
+            "industryName": "শিল্পখাতের নাম",
+            "organizationNumber": "সংস্থার নম্বর",
+            "country": "দেশ",
+            "otherLanguage": "অন্য ভাষা",
+            "timezone": "টাইমজোন",
+            "dateFormat": "তারিখ ফরম্যাট",
+            "weekStartDay": "সপ্তাহের শুরুর দিন",
+            "weekends": "সাপ্তাহিক ছুটির দিন",
+            "lunchBreakTime": "লাঞ্চ বিরতির সময় (মিনিট)",
+            "isRoster": "রোস্টার",
+            "email": "ইমেইল",
+            "adminEmail": "অ্যাডমিনের সাথে যোগাযোগের ইমেইল",
+            "website": "ওয়েবসাইট",
+            "telephoneNumber": "টেলিফোন নম্বর",
+            "address": "ঠিকানা",
+            "companyNameBangla": "প্রতিষ্ঠানের নাম (বাংলা)",
+            "categoryName": "ক্যাটাগরির নাম",
+            "tradeLicenseNumber": "বাণিজ্যিক লাইসেন্স নম্বর",
+            "mobileNumber": "মোবাইল নম্বর",
+            "additionalMobileNumber": "অতিরিক্ত মোবাইল নম্বর",
+            "adminContactNumber": "অ্যাডমিনের সাথে যোগাযোগের নম্বর",
+            "adminContact": "অ্যাডমিনের সাথে যোগাযোগ",
+            "contactNumber": "যোগাযোগের নম্বর",
+            "smsSendPermission": "এসএমএস পাঠানোর অনুমতি"
+        },
+        "placeholder": {
+            "companyName": "ইংরেজিতে প্রতিষ্ঠানের নাম",
+            "industryName": "শিল্পখাতের নাম",
+            "organizationNumber": "সংস্থার নম্বর",
+            "country": "দেশ",
+            "otherLanguage": "অন্য ভাষা",
+            "timezone": "টাইমজোন",
+            "dateFormat": "তারিখ ফরম্যাট",
+            "weekStartDay": "সপ্তাহের শুরুর দিন",
+            "weekends": "সাপ্তাহিক ছুটির দিন",
+            "lunchBreakTime": "লাঞ্চ বিরতির সময় (মিনিট)",
+            "email": "ইমেইল",
+            "adminEmail": "অ্যাডমিন ইমেইল",
+            "website": "ওয়েবসাইটের ইউ.আর.এল",
+            "telephoneNumber": "টেলিফোন নম্বর",
+            "address": "ঠিকানা",
+            "companyNameBangla": "বাংলায় প্রতিষ্ঠানের নাম",
+            "tradeLicenseNumber": "বাণিজ্যিক লাইসেন্স নম্বর",
+            "mobileNumber": "মোবাইল নম্বর",
+            "additionalMobileNumber": "অতিরিক্ত মোবাইল নম্বর",
+            "adminContactNumber": "অ্যাডমিন যোগাযোগ নম্বর"
+        },
+        "header": {
+            "details": "বিস্তারিত",
+            "basicInfo": "মৌলিক",
+            "additionalInfo": "অতিরিক্ত",
+            "contactInfo": "যোগাযোগ",
+            "systemSettings": "সিস্টেম সেটিংস",
+            "show": {
+                "basicInformation": "মৌলিক তথ্য",
+                "additionalInformation": "অতিরিক্ত তথ্য",
+                "contactInformation": "যোগাযোগের তথ্য"
+            },
+            "title": {
+                "basicInformation": "সেটিংসের মৌলিক তথ্য আপডেট",
+                "additionalInformation": "সেটিংসের অতিরিক্ত তথ্য আপডেট",
+                "contactInformation": "সেটিংসের যোগাযোগের তথ্য আপডেট",
+                "tooltip": "উৎপত্তিস্থল"
+            }
+        }
+    },
+    "user": {
+        "label": {
+            "name": "নাম",
+            "email": "ইমেইল",
+            "password": "পাসওয়ার্ড",
+            "currentPassword": "বর্তমান পাসওয়ার্ড",
+            "newPassword": "নতুন পাসওয়ার্ড",
+            "confirmNewPassword": "নতুন পাসওয়ার্ডের কনফার্মেশন",
+            "resetPassword": "রিসেট পাসওয়ার্ড",
+            "deleteAccount": "অ্যাকাউন্ট মুছুন",
+            "assignRole": "অ্যাসাইন রোল",
+            "role": "রোল",
+            "status": "স্ট্যাটাস",
+            "lastLogin": "শেষ লগইন",
+            "joiningDate": "যোগদানের তারিখ"
+        },
+        "placeholder": {
+            "name": "নাম",
+            "email": "ইমেইল",
+            "currentPassword": "বর্তমান পাসওয়ার্ড",
+            "newPassword": "নতুন পাসওয়ার্ড",
+            "confirmNewPassword": "নতুন পাসওয়ার্ডের কনফার্মেশন",
+            "assignRole": "রোল",
+            "searchUsers": "ইউজারদের অনুসন্ধান"
+        },
+        "header": {
+            "add": "নতুন ইউজার",
+            "edit": "এডিট ইউজার",
+            "details": "বিস্তারিত",
+            "overview": "ওভারভিউ",
+            "security": "নিরাপত্তা",
+            "authenticationLogs": "অথেনটিকেশন লগ",
+            "activityLogs": "অ্যাক্টিভিটি লগ",
+            "show": {
+                "profile": "প্রোফাইল",
+                "upcomingMeetings": "২টি আপকামিং মিটিং",
+                "message": "বার্তা",
+                "date": "তারিখ",
+                "ipAddress": "আইপি এড্রেস",
+                "userAgent": "ইউজার এজেন্ট"
+            },
+            "title": {
+                "updateUserDetails": "ইউজারের তথ্য আপডেট",
+                "updateEmailAddress": "ইমেইল আপডেট",
+                "updateMobileNumber": "মোবাইল নম্বর আপডেট",
+                "updatePassword": "পাসওয়ার্ড আপডেট",
+                "updateRoles": "রোল আপডেট"
+            },
+            "info": {
+                "email": {
+                    "validEmail": "অনুগ্রহ করে মনে রাখবেন যে ইমেইল ভেরিফিকেশন করার জন্য একটি ভ্যালিড ইমেইল প্রয়োজন।",
+                    "unverified": "আপনার ইমেইল ভ্যালিড হয়নি।",
+                    "verification": "ভেরিফিকেশন ইমেইল পুনরায় পাঠাতে এখানে ক্লিক করুন।",
+                    "newVerification": "আপনার ইমেইলে একটি নতুন ভেরিফিকেশন লিঙ্ক পাঠানো হয়েছে।"
+                },
+                "delete": {
+                    "downloadData": "একবার আপনার অ্যাকাউন্ট মুছে ফেলা হলে, এর সমস্ত রিসোর্স এবং ডেটা স্থায়ীভাবে মুছে যাবে। আপনার অ্যাকাউন্ট মুছে ফেলার আগে, কোনো ডেটা বা তথ্য ধরে রাখতে চাইলে তা ডাউনলোড করে রাখুন।",
+                    "passwordConfirmation": "একবার আপনার অ্যাকাউন্ট মুছে ফেলা হলে, এর সমস্ত রিসোর্স এবং ডেটা স্থায়ীভাবে মুছে যাবে। আপনি স্থায়ীভাবে আপনার অ্যাকাউন্ট নিশ্চিতভাবে মুছে ফেলতে চাইলে আগে আপনার পাসওয়ার্ড লিখুন।"
+                }
+            },
+            "profile": {
+                "edit": "আমার প্রোফাইল",
+                "update": {
+                    "profileInfo": "প্রোফাইলের তথ্য",
+                    "signInMethod": "সাইন-ইন পদ্ধতি"
+                }
+            }
+        }
+    },
+    "sms": {
+        "label": {
+            "sendSMS": "এসএমএস পাঠান",
+            "smsLog": "এসএমএস লগ",
+            "remainingSMS": "বাকি এসএমএস",
+            "smsTemplate": "এসএমএস টেমপ্লেট",
+            "enTemplate": "টেমপ্লেট (ইংরেজি)",
+            "bnTemplate": "টেমপ্লেট (বাংলা)",
+            "paymentId": "পেমেন্ট আইডি"
+        },
+        "placeholder": {
+            "searchSMS": "ক্রয়কৃত এসএমএস অনুসন্ধান",
+            "searchSMSTemplate": "এসএমএস টেমপ্লেট অনুসন্ধান",
+            "enTemplate": "ইংরেজিতে এসএমএস টেমপ্লেট",
+            "bnTemplate": "বাংলায় এসএমএস টেমপ্লেট"
+        },
+        "header": {
+            "purchase": "এসএমএস ক্রয়",
+            "paymentConfirmation": "পেমেন্ট নিশ্চিতকরণ",
+            "smsPurchaseDetails": "এসএমএস ক্রয়ের বিবরণ",
+            "addSMSTemplate": "নতুন এসএমএস টেমপ্লেট",
+            "editSMSTemplate": "এডিট এসএমএস টেমপ্লেট"
+        },
+        "unit": "প্রতি এসএমএস",
+        "title": {
+            "remaining": "আপনার বাকি থাকা এসএমএস এর সংখ্যা",
+            "please": "অনুগ্রহ করে",
+            "purchaseSMS": "এসএমএস ক্রয় করুন"
+        }
+    },
+    "role": {
+        "label": {
+            "roleName": "নাম",
+            "rolePermission": "পারমিশন",
+            "administratorAccess": "অ্যাডমিনিস্ট্রেটর অ্যাক্সেস",
+            "selectAll": "সব নির্বাচন করুন"
+        },
+        "placeholder": {
+            "roleName": "রোলের নাম"
+        },
+        "header": {
+            "add": "নতুন রোল",
+            "edit": "এডিট রোল",
+            "usersAssigned": "ইউজার অ্যাসাইন"
+        }
+    },
+    "employee": {
+        "label": {
+            "fullName": "পুরো নাম",
+            "firstName": "নামের প্রথম অংশ",
+            "lastName": "নামের শেষ অংশ",
+            "staffId": "কর্মচারীর আইডি",
+            "socialSecurityNumber": "সামাজিক নিরাপত্তা নম্বর",
+            "mobileNumber": "মোবাইল নম্বর",
+            "dateOfBirth": "জন্ম তারিখ",
+            "bloodGroup": "রক্তের গ্রুপ",
+            "gender": "লিঙ্গ",
+            "maritalStatus": "বৈবাহিক অবস্থা",
+            "userName": "ব্যবহারকারীর নাম",
+            "country": "দেশ",
+            "permanentAddress": "স্থায়ী ঠিকানা",
+            "address": "ঠিকানা",
+            "presentAddress": "বর্তমান ঠিকানা",
+            "emergencyContact": {
+                "title": "জরুরী যোগাযোগ",
+                "name": "নাম",
+                "relation": "সম্পর্ক",
+                "number": "নম্বর"
+            },
+            "jobTitle": "কাজের শিরোনাম",
+            "jobPosition": "চাকুরীর পদসমূহ",
+            "joiningDate": "যোগদানের তারিখ",
+            "approver": "অনুমোদনকারী",
+            "departmentName": "ডিপার্টমেন্টের নাম",
+            "branchName": "ব্রাঞ্চের নাম",
+            "manager": "ম্যানেজার",
+            "leaveManager": "লিভ ম্যানেজার",
+            "salary": "বেতন",
+            "hourlyRate": "ঘণ্টাপ্রতি রেট",
+            "hourLimitWeekly": "সাপ্তাহিক ঘন্টা লিমিট",
+            "overtimeRate": "ওভারটাইম রেট",
+            "overtimeLimit": "ওভারটাইম লিমিট",
+            "workPermit": "ওয়ার্ক পারমিট",
+            "passportNumber": "পাসপোর্ট নম্বর",
+            "visaNumber": "ভিসা নম্বর",
+            "visaExpiryDate": "ভিসার মেয়াদ শেষ হওয়ার তারিখ",
+            "workPermitNumber": "ওয়ার্ক পারমিট নম্বর",
+            "workPermitExpirationDate": "ওয়ার্ক পারমিটের মেয়াদ শেষ হওয়ার তারিখ",
+            "others": "অন্যান্য",
+            "linkedinProfile": "লিঙ্কডিন প্রোফাইল",
+            "eTinNumber": "ই-টিন নম্বর",
+            "nfcCard": "এন.এফ.সি কার্ড",
+            "geoFencing": "জিও ফেন্সিং",
+            "photoTaking": "ফটো তোলা",
+            "visaInformation": "ভিসার তথ্য",
+            "workPermitInformation": "ওয়ার্ক পারমিটের তথ্য",
+            "departureInformation": "চলে যাওয়ার তথ্য",
+            "departureReason": "চলে যাওয়ার কারণ",
+            "departureDescription": "চলে যাওয়ার বিবরণ",
+            "departureDate": "চলে যাওয়ার তারিখ"
+        },
+        "placeholder": {
+            "firstName": "নামের প্রথম অংশ",
+            "lastName": "নামের শেষ অংশ",
+            "staffId": "কর্মচারীর আইডি",
+            "socialSecurityNumber": "সামাজিক নিরাপত্তা নম্বর",
+            "mobileNumber": "মোবাইল নম্বর",
+            "dateOfBirth": "জন্ম তারিখ",
+            "bloodGroup": "রক্তের গ্রুপ",
+            "gender": "লিঙ্গ",
+            "maritalStatus": "বৈবাহিক অবস্থা",
+            "userName": "ব্যবহারকারীর নাম",
+            "country": "দেশ",
+            "emergencyContact": {
+                "title": "জরুরী যোগাযোগ",
+                "name": "নাম",
+                "relation": "সম্পর্ক",
+                "number": "নম্বর"
+            },
+            "jobTitle": "কাজের শিরোনাম",
+            "jobPosition": "চাকুরীর পদসমূহ",
+            "joiningDate": "যোগদানের তারিখ",
+            "approver": "অনুমোদনকারী",
+            "departmentName": "ডিপার্টমেন্টের নাম",
+            "branchName": "ব্রাঞ্চের নাম",
+            "manager": "ম্যানেজার",
+            "leaveManager": "লিভ ম্যানেজার",
+            "salary": "বেতন",
+            "hourlyRate": "ঘণ্টাপ্রতি রেট",
+            "hourLimitWeekly": "সাপ্তাহিক ঘন্টা লিমিট",
+            "overtimeRate": "ওভারটাইম রেট",
+            "overtimeLimit": "ওভারটাইম লিমিট",
+            "workPermit": "ওয়ার্ক পারমিট",
+            "passportNumber": "পাসপোর্ট নম্বর",
+            "visaNumber": "ভিসা নম্বর",
+            "visaExpiryDate": "ভিসার মেয়াদ শেষ হওয়ার তারিখ",
+            "workPermitNumber": "ওয়ার্ক পারমিট নম্বর",
+            "workPermitExpirationDate": "ওয়ার্ক পারমিটের মেয়াদ শেষ হওয়ার তারিখ",
+            "linkedinProfile": "লিঙ্কডিন প্রোফাইল",
+            "eTinNumber": "ই-টিন নম্বর",
+            "departureReason": "চলে যাওয়ার কারণ",
+            "departureDescription": "চলে যাওয়ার বিবরণ",
+            "searchEmployees": "কর্মচারী অনুসন্ধান",
+            "searchAttendanceLogs": "উপস্থিতি লগ অনুসন্ধান"
+        },
+        "header": {
+            "add": "নতুন কর্মচারী",
+            "details": "বিস্তারিত",
+            "basicInfo": {
+                "title":  "মৌলিক তথ্য",
+                "description": "মৌলিক তথ্য",
+                "add": "কর্মচারীর নতুন মৌলিক তথ্য",
+                "edit": "কর্মচারীর মৌলিক তথ্য আপডেট"
+            },
+            "additionalInfo": {
+                "title":  "অতিরিক্ত তথ্য",
+                "description": "অতিরিক্ত তথ্য",
+                "edit": "কর্মচারীর অতিরিক্ত তথ্য আপডেট"
+            },
+            "workInfo": {
+                "title":  "কাজের তথ্য",
+                "description": "কাজের তথ্য",
+                "edit": "কর্মচারীর কাজের তথ্য আপডেট"
+            },
+            "departureInfo": {
+                "title":  "চলে যাওয়ার তথ্য",
+                "description": "কর্মচারীর চলে যাওয়ার তথ্য",
+                "employeeTermination": "কর্মচারীর পরিসমাপ্তি",
+                "departed": "কর্মচারী",
+                "terminate": "চলে যাওয়া",
+                "rejoin": "পুনরায় যোগদান"
+            }
+        }
+    },
+    "jobPosition": {
+        "placeholder": {
+            "searchJobPositions": "চাকুরীর পদসমূহ অনুসন্ধান"
+        },
+        "header": {
+            "add": "নতুন চাকুরীর পদ",
+            "edit": "এডিট চাকুরীর পদ"
+        }
+    },
+    "department": {
+        "label": {
+            "parentDepartment": "প্যারেন্ট ডিপার্টমেন্ট"
+        },
+        "placeholder": {
+            "parentDepartment": "প্যারেন্ট ডিপার্টমেন্ট",
+            "searchDepartments": "ডিপার্টমেন্টসমূহ অনুসন্ধান"
+        },
+        "header": {
+            "add": "নতুন ডিপার্টমেন্ট",
+            "edit": "এডিট ডিপার্টমেন্ট",
+            "departmentDetails": "ডিপার্টমেন্টের বিস্তারিত"
+        }
+    },
+    "subscription": {
+        "label": {
+            "billTo": "বিল",
+            "customerName": "ক্রেতার নাম",
+            "address": "ঠিকানা",
+            "phone": "ফোন",
+            "subscriptionPlan": "সাবস্ক্রিপশন প্ল্যান",
+            "subscriptionFees": "সাবস্ক্রিপশন ফি",
+            "subscriptionDuration": "সাবস্ক্রিপশন মেয়াদ",
+            "billingMethod": "বিলিং পদ্ধতি",
+            "currency": "মুদ্রা",
+            "subscriptionID": "সাবস্ক্রিপশন আইডি",
+            "started": "শুরু",
+            "status": "স্ট্যাটাস",
+            "ended": "শেষ",
+            "trialStarted": "ট্রায়াল শুরু",
+            "trialEnded": "ট্রায়াল শেষ",
+            "trial": "ট্রায়াল স্ট্যাটাস",
+            "planName": "প্ল্যানের নাম",
+            "startDate": "শুরুর তারিখ",
+            "endDate": "শেষ তারিখ",
+            "finalPrice": "সর্বমোট মূল্য",
+            "monthly": "মাসিক",
+            "annual": "বার্ষিক"
+        },
+        "placeholder": {
+            "searchSubscriptionHistory": "সাবস্ক্রিপশন হিস্ট্রি অনুসন্ধান"
+        },
+        "header": {
+            "billingAddress": "বিলিং অ্যাড্রেস",
+            "currentSubscription": "বর্তমান সাবস্ক্রিপশন",
+            "subscriptionPlanDetails": "সাবস্ক্রিপশন প্ল্যানের বিস্তারিত",
+            "paymentMethod": "পেমেন্ট পদ্ধতি",
+            "subscriptionDetails": "সাবস্ক্রিপশন বিস্তারিত",
+            "customer": "ক্রেতা",
+            "subscriptionHistory": "সাবস্ক্রিপশন হিস্ট্রি",
+            "subscriptionPlan": "সাবস্ক্রিপশন প্ল্যান",
+            "paymentConfirmation": "পেমেন্ট নিশ্চিতকরণ"
+        }
+    },
+
+    "buyer": {
+        "label": {
+            "previous_due": "পূ‍র্বের জের",
+            "joining_date": "যোগদানের তারিখ",
+            "totalTransaction": "স‍র্বেমাট লেনদেন",
+            "totalPayment": "স‍র্বেমাট জমা",
+            "totalDue": "স‍র্বেমাট বকেয়া",
+            "description": "বিবরণ",
+            "amount": "টাকা",
+            "receiverSignature": "গ্রহীতার সাক্ষর",
+            "producerSignature": "প্রস্তুুতকারীর সাক্ষর",
+            "employeeSignature": "ক‍র্মক‍র্তার সাক্ষর",
+            "transaction": "লেনদেন সমূহ",
+            "atAGlance": "এক নজরে",
+            "totalPurchase": "মোট ক্রয়",
+            "totalSale": "মোট বিক্রয়",
+            "totalExpense": "মোট খরচ",
+            "totalBuyerPayment": "মোট ক্রেতার জমা",
+            "totalSupplierPayment": "মোট বিক্রেতার জমা"
+        },
+        "placeholder": {
+            "previous_due": "পূ‍র্বের বকেয়া",
+            "searchBuyers": "ক্রেতা অনুসন্ধান"
+        },
+        "header": {
+            "add": "নতুন ক্রেতা",
+            "sendDueReminder": "তাগদা পাঠান",
+            "edit": "এডিট ক্রেতা",
+            "transactions": "লেনদেন সমূহ",
+            "payment": "জমা",
+            "atGlance": "এক নজরে",
+            "show": {
+                "payment": "জমা",
+                "buttonValue": {
+                    "addPayment": "জমা যোগ করুন",
+                    "printInvoice":"প্রিন্ট ইনভয়েস"
+                }
+            }
+        }
+    },
+
+    "payment": {
+        "label": {
+            "amount": "টাকা",
+            "paymentDate": "জমার তারিখ",
+            "paymentMethod": "জমার পদ্ধতি",
+            "total": "মোট"
+        },
+        "placeholder": {
+            "amount": "টাকা",
+            "paymentDate": "জমার তারিখ",
+            "paymentMethod": "জমার পদ্ধতি"
+        },
+        "title": {
+            "add": "জমা যোগ",
+            "edit": "জমা আপডেট"
+        }
+    },
+
+    "sale": {
+        "label": {
+            "saleDate": "বিক্রয়ের তারিখ",
+            "invoiceNumber": "চালান নাম্বার",
+            "buyer": "ক্রেতা",
+            "paid": "জমা",
+            "totalAmount": "মোট দাম",
+            "selectBuyer": "নি‍‍র্বাচিত ক্রেতা",
+            "items": "পণ্যসমূহ",
+            "itemName": "পণ্যের নাম",
+            "box": "বক্স",
+            "poly": "পলি",
+            "mir": "মির",
+            "quantity": "পরিমাণ",
+            "unitPrice": "দর",
+            "totalPrice": "মোট টাকা",
+            "total": "মোট",
+            "discountAmount": "মওকুফ",
+            "grandTotal": "স‍র্বেমাট",
+            "due": "জের",
+            "brand": "ব্রান্ড",
+            "description": "বিবরণ",
+            "receiverSignature": "গ্রহীতার সাক্ষর",
+            "producerSignature": "প্রস্তুুতকারীর সাক্ষর",
+            "employeeSignature": "ক‍র্মক‍র্তার সাক্ষর",
+            "saleType": "বিবরণ",
+            "subTotal": "মোট",
+            "paidAmount": "জমা"
+        },
+        "placeholder": {
+            "selectBuyer": "নি‍‍র্বাচিত ক্রেতা",
+            "discountAmount": "ছাড়",
+            "paid": "জমা",
+            "selectItem": "পণ্য নি‍র্বাচন",
+            "selectBrand": "ব্রান্ড নি‍র্বাচন",
+            "box": "বক্স",
+            "poly": "পলি",
+            "mir": "মির",
+            "quantity": "পরিমাণ",
+            "unitPrice": "দর",
+            "totalPrice": "স‍র্বেমাট",
+            "searchSale": "বিক্রয় অনুসন্ধান"
+        },
+        "title": {
+            "addItem": "নতুন পণ্য",
+            "updateItem": "আপডেট পণ্য"
+        },
+        "buttonValue": {
+            "larvaeSale": "পোনা বিক্রয়",
+            "otherSale": "অন্যান্য বিক্রয়",
+            "addBuyer": "নতুন ক্রেতা",
+            "addItem": "নতুন পণ্য",
+            "updateItem": "আপডেট পণ্য",
+            "printInvoice": "প্রিন্ট চালান"
+        }
+    },
+
+    "purchase":{
+        "label": {
+            "purchaseDate": "ক্রয়ের তারিখ",
+            "purchaseType": "ক্রয়ের ধরণ",
+            "supplier": "সাপ্লায়ার",
+            "selectedSupplier": "নি‍‍র্বাচিত সাপ্লায়ার"
+        },
+        "placeholder": {
+            "searchPurchase": "ক্রয় অনুসন্ধান",
+            "selectedSupplier": "নি‍‍র্বাচিত সাপ্লায়ার"
+        },
+        "buttonValue": {
+            "otherPurchase": "অন্যান্য ক্রয়",
+            "larvaePurchase": "পোনা ক্রয়",
+            "addSupplier": "নতুন সাপ্লায়ার",
+            "delete": "ক্রয় মুছুন",
+            "deleteOther": "অন্যান্য ক্রয় মুছুন"
+        }
+    },
+
+    "brand": {
+        "label": {
+            "brandName": "ব্র্যান্ডের নাম"
+        },
+        "placeholder": {
+            "brandName": "ব্র্যান্ডের নাম",
+            "searchBrand": "ব্র্যান্ড অনুসন্ধান"
+        },
+        "title": {
+            "add": "নতুন ব্র্যান্ড",
+            "edit": "এডিট ব্র্যান্ড"
+        },
+        "buttonValue": {
+            "addBrand": "নতুন ব্র্যান্ড"
+        }
+    },
+
+    "item": {
+        "label": {
+            "sale": "বিক্রয়",
+            "purchase": "ক্রয়",
+            "expense": "খরচ",
+            "type": "ধরণ",
+            "itemName": "পণ্যের নাম",
+            "description": "বিবরণ",
+            "parent": "প্যারেন্ট"
+        },
+        "placeholder": {
+            "type": "ধরণ",
+            "itemName": "পণ্যের নাম",
+            "description": "বিবরণ",
+            "searchItems": "আইটেম অনুসন্ধান করুন"
+        },
+        "title": {
+            "add": "নতুন খরচ",
+            "edit": "এডিট খরচ"
+        },
+        "buttonValue": {
+            "addExpense": "নতুন খরচ"
+        }
+    },
+
+    "expense": {
+        "label": {
+            "itemName": "খরচের নাম",
+            "amount": "টাকা",
+            "createdAt": "খরচ তৈরির তারিখ",
+            "selectItem":"খরচ নি‍র্বাচন",
+            "invoiceNumber": "চালান নাম্বার"
+        },
+        "placeholder": {
+            "selectItem":"খরচ নি‍র্বাচন",
+            "invoiceNumber": "চালান নাম্বার",
+            "searchExpense": "খরচ অনুসন্ধান"
+        },
+        "title": {
+            "add": "নতুন খরচ",
+            "edit": "এডিট খরচ"
+        },
+        "buttonValue": {
+            "addNewExpense": "নতুন খরচ"
+        }
+    },
+
+    "fiscalYear": {
+        "label": {
+            "year": "বছর",
+            "startDate": "শুরুর তারিখ",
+            "endDate": "শেষ তারিখ",
+            "runningStatus": "চলমান স্ট্যাটাস",
+            "status": "স্ট্যাটাস",
+            "actions": "এ্যাকশন",
+            "fiscalYear": "অ‍র্থ বছর",
+            "note": "নোট"
+        },
+        "placeholder": {
+            "fiscalYear": "অ‍র্থ বছর",
+            "StartDate": "শুরুর তারিখ",
+            "endDate": "শেষ তারিখ",
+            "note": "নোট",
+            "searchFiscalYear": "অ‍র্থ বছর অনুসন্ধান"
+        },
+        "title": {
+            "add": "নতুন অ‍র্থ বছর",
+            "edit": "এডিট অ‍র্থ বছর",
+            "details": "অ‍র্থ বছরের বিস্তারিত"
+        },
+        "buttonValue": {
+            "addFiscalYear": "নতুন অ‍র্থ বছর"
+        }
+    },
+
+    "supplier": {
+        "label": {
+            "joiningDate": "যোগদানের তারিখ",
+            "previousDue": "পূর্বের বকেয়া"
+        },
+        "placeholder": {
+            "previousDue": "পূর্বের বকেয়া",
+            "searchSuppliers": "সরবরাহকারী অনুসন্ধান"
+        },
+        "title": {
+            "add": "নতুন সরবরাহকারী",
+            "edit": "এডিট সরবরাহকারী"
+        }
+    },
+
+    "report": {
+        "label": {
+            "fromDate": "{date} তারিখ হতে",
+            "toDate": "{date} তারিখ পর্যন্ত"
+        },
+        "placeholder": {
+            "searchSummaries": "সারসংক্ষেপ অনুসন্ধান",
+            "searchSales": "বিক্রয় অনুসন্ধান"
+        }
+    },
+
+    "commonComponents": {
+        "addressComponent": {
+            "label": {
+                "addressLineOne": "ঠিকানার প্রথম লাইন",
+                "addressLineTwo": "ঠিকানার দ্বিতীয় লাইন",
+                "floor": "তলা",
+                "city": "শহর",
+                "state": "প্রদেশ",
+                "zipCode": "পোষ্টকোড"
+            },
+            "placeholder": {
+                "addressLineOne": "ঠিকানার প্রথম লাইন",
+                "addressLineTwo": "ঠিকানার দ্বিতীয় লাইন",
+                "floor": "তলা",
+                "city": "শহর",
+                "state": "প্রদেশ",
+                "zipCode": "পোষ্টকোড"
+            }
+        },
+        "employeeComponent": {
+            "label" : {
+                "name": "নাম",
+                "employeeId": "কর্মচারীদের আইডি",
+                "jobTitle": "কাজের শিরোনাম",
+                "status": "স্ট্যাটাস",
+                "joiningDate": "যোগদান তারিখ",
+                "lastLogin": "শেষ লগইন"
+            },
+            "placeholder": {
+                "searchEmployees": "কর্মচারীদের অনুসন্ধান"
+            },
+            "header": {
+                "employeeList": "কর্মচারীদের তালিকা"
+            }
+        }
+    },
+
+    "filterOptions": {
+        "title": "ফিল্টার অপশন",
+        "subtitle": "ফিল্টার অপশন",
+        "user": {
+            "subtitle": {
+                "label": {
+                    "role": "রোল",
+                    "status": "স্ট্যাটাস"
+                },
+                "placeholder": {
+                    "role": "রোল",
+                    "status": "স্ট্যাটাস"
+                }
+            }
+        },
+        "employee": {
+            "subtitle": {
+                "label": {
+                    "department": "ডিপার্টমেন্ট",
+                    "jobPosition": "চাকুরীর পদসমূহ",
+                    "branch": "ব্রাঞ্চ",
+                    "status": "স্ট্যাটাস"
+                },
+                "placeholder": {
+                    "department": "ডিপার্টমেন্ট",
+                    "jobPosition": "চাকুরীর পদসমূহ",
+                    "branch": "ব্রাঞ্চ",
+                    "status": "স্ট্যাটাস"
+                }
+            }
+        },
+        "report": {
+            "subTitle": {
+                "label": {
+                    "fromDate": "তারিখ হতে",
+                    "toDate": "তারিখ পর্যন্ত",
+                    "saleType": "বিক্রয়ের ধরণ"
+                },
+                "placeholder": {
+                    "saleType": "বিক্রয়ের ধরণ নির্বাচন"
+                }
+            }
+        }
+    },
+    "confirmation": {
+        "changeStatus": "আপনি কি নিশ্চিতভাবে স্ট্যাটাস পরিবর্তন করতে চান",
+        "remove": {
+            "account": "আপনি কি নিশ্চিতভাবে আপনার অ্যাকাউন্ট মুছে ফেলতে চান?",
+            "others": "আপনি কি নিশ্চিতভাবে {messageTitle} - এর তথ্য মুছে ফেলতে চান?"
+        },
+        "wait": "অপেক্ষা করুন...",
+        "permissionDenied": "পারমিশন দেওয়া যায়নি",
+        "successfulLogin": "আপনি সফলভাবে লগ ইন করেছেন",
+        "gotIt": "ঠিক আছে",
+        "checkout": {
+            "forget": "আপনি চেকআউট করতে ভুলে গেছেন ",
+            "date": "তারিখে",
+            "continue": "চালিয়ে যেতে প্রথমে চেক আউট করুন"
+        },
+        "approve": {
+            "main": "আপনি কি",
+            "sub": "- এর উপস্থিতির অনুরোধ অনুমোদন করতে চান"
+        },
+        "decline": {
+            "main": "আপনি কি",
+            "sub": "- এর উপস্থিতির অনুরোধ প্রত্যাখ্যান করতে চান"
+        },
+        "fiscalYear": {
+            "start": "আপনি কি নিশ্চিতভাবে {year} বছরের শুরু করতে চান?",
+            "end": "আপনি কি নিশ্চিতভাবে {year} বছরের শেষ করতে চান?"
+        },
+        "buyer": {
+            "noBuyers": "বাকি পরিশোধযোগ্য অর্থ সহ কোনো ক্রেতা নেই, যাদের জন্য রিমাইন্ডার পাঠানো যাবে না",
+            "confirmReminder": "{count} জন ক্রেতাকে এসএমএস রিমাইন্ডার পাঠাতে আপনি কি নিশ্চিত?",
+            "yesSendSMS": "হ্যাঁ, এসএমএস পাঠান",
+            "reminderSent": "বাকি অর্থের জন্য রিমাইন্ডার সফলভাবে পাঠানো হয়েছে"
+        },
+        "purchase": {
+            "delete": "{supplier} এর {purchaseDate} তারিখের ক্রয়",
+            "deleteOther": "{supplier} এর {purchaseDate} তারিখের অন্যান্য ক্রয়"
+        },
+        "cancel": "বাতিল"
+    },
+    "dataTable": {
+        "numbers": {
+            "first": "১০",
+            "second": "২৫",
+            "third": "৫০"
+        },
+        "notFound": "কোন তথ্য পাওয়া যায়নি"
+    },
+    "tooltip": {
+        "title": {
+            "view": "দেখুন",
+            "edit": "এডিট",
+            "editDetails": "এডিট বিস্তারিত",
+            "delete": "মুছুন",
+            "changeStatus": "স্ট্যাটাস পরিবর্তন",
+            "startYear": "শুরুর বছর",
+            "endYear": "শেষ বছর"
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "সাইন ইন",
+            "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন",
+            "email": "আপনার ইমেইল দিন",
+            "mobileNumber": "আপনার মোবাইল নম্বর দিন",
+            "password": "আপনার পাসওয়ার্ড দিন"
+        },
+        "signUpConfirmation": {
+            "title": "স্বাগত",
+            "description": "আপনি সফলভাবে আপনার অ্যাকাউন্ট সক্রিয় করেছেন। দয়া করে লগইন করুন"
+        },
+        "forgotPassword": {
+            "title": "পাসওয়ার্ড ভুলে গেছেন",
+            "description": "পাসওয়ার্ড রিসেট করতে আপনার মোবাইল নম্বর লিখুন।",
+            "label": {
+                "email": "ইমেইল"
+            },
+            "placeholder": {
+                "email": "ইমেইল"
+            }
+        },
+        "resetPassword": {
+            "title": "রিসেট পাসওয়ার্ড",
+            "description": "আপনার পাসওয়ার্ড পুনরায় সেট করতে আপনার নতুন পাসওয়ার্ড লিখুন।",
+            "label": {
+                "email": "ইমেইল",
+                "newPassword": "নতুন পাসওয়ার্ড",
+                "confirmNewPassword": "নতুন পাসওয়ার্ড নিশ্চিত করুন",
+                "resetPassword": "পাসওয়ার্ড সফলভাবে রিসেট হয়েছে। এখন লগইন করুন।"
+            },
+            "placeholder": {
+                "email": "ইমেইল",
+                "newPassword": "নতুন পাসওয়ার্ড",
+                "confirmNewPassword": "নতুন পাসওয়ার্ড নিশ্চিত করুন"
+            }
+        },
+        "verifyEmail": {
+            "title": "ইমেইল ভেরিফিকেশন",
+            "message": "সাইন আপ করার জন্য ধন্যবাদ! শুরু করার আগে, আমরা এইমাত্র আপনাকে যে লিঙ্কটি ইমেইল করেছি তাতে ক্লিক করে আপনি কি আপনার ইমেইল ঠিকানা যাচাই করতে পারেন? আপনি যদি ইমেইলটি না পেয়ে থাকেন, তাহলে ইমেইলটি পেতে অনুগ্রহ করে পুনরায় ভেরিফিকেশন ইমেইল পাঠান বাটনে ক্লিক করুন।",
+            "linkSent": "রেজিষ্ট্রেশনের সময় আপনার দেওয়া ইমেইল অ্যাড্রেসে একটি নতুন ভেরিফিকেশন লিঙ্ক পাঠানো হয়েছে।"
+        },
+        "verifySMS": {
+            "title": "এসএমএস যাচাইকরণ",
+            "message": "নিবন্ধনের জন্য ধন্যবাদ! শুরু করার আগে, দয়া করে আপনার মোবাইল নম্বরটি যাচাই করুন — আমরা যে ওটিপি পাঠিয়েছি, সেটি ব্যবহার করে 'ওটিপি যাচাই করুন' বাটনে ক্লিক করুন। যদি আপনি ওটিপি না পেয়ে থাকেন, তবে নতুন করে এসএমএস পেতে 'পুনরায় পাঠান' বাটনে ক্লিক করুন।",
+            "linkSent": "নিবন্ধনের সময় আপনি যে মোবাইল নম্বরটি দিয়েছিলেন, তাতে একটি নতুন ওটিপি পাঠানো হয়েছে।"
+        }
+    },
+    "appInfo": {
+        "name": "মুহুরী"
+    },
+    "links": {
+        "footer": {
+            "terms": "শর্তাবলী",
+            "plans": "পরিকল্পনা",
+            "contactUs": "যোগাযোগ"
+        }
+    },
+    "themeMode": {
+        "light": "লাইট",
+        "dark": "ডার্ক",
+        "system": "সিস্টেম"
+    },
+    "sidebarMenu": {
+        "dashboard": "ড্যাশবোর্ড",
+        "section": {
+            "admin": "অ্যাডমিন",
+            "hr": "এইচআর",
+            "employee": "কর্মচারী",
+            "report": "রিপোর্ট"
+        },
+        "configuration": {
+            "menu": "সেটিংস"
+        },
+        "userManagement": {
+            "menu": "ইউজার ম্যানেজমেন্ট",
+            "submenu": {
+                "roles": "রোল",
+                "users": "ইউজার"
+            }
+        },
+        "smsManagement": {
+            "menu": "এসএমএস ম্যানেজমেন্ট",
+            "submenu": {
+                "smsDashboard": "এসএমএস ড্যাশবোর্ড",
+                "smsPurchaseHistory": "এসএমএস ক্রয় রিপোর্ট ",
+                "smsLog": "এসএমএস লগ"
+            }
+        },
+        "items": {
+            "menu": "আইটেম"
+        },
+        "buyerManagement": {
+            "menu": "ক্রেতা"
+        },
+        "orderManagement": {
+            "menu": "অ‍র্ডার ম্যানেজমেন্ট",
+            "subMenu": {
+                "sales": "বিক্রয়"
+            }
+        },
+        "expenseManagement": {
+            "menu": "নগদ খরচ ম্যানেজমেন্ট"
+        },
+        "purchaseManagement": {
+            "menu": "ক্রয় ম্যানেজমেন্ট",
+            "subMenu": {
+                "purchases": "ক্রয়",
+                "suppliers": "সাপ্লায়ার"
+            }
+        },
+        "brand": {
+            "menu": "ব্র্যান্ড"
+        },
+        "fiscalYear": {
+            "menu": "অ‍র্থ বছর"
+        },
+        "employee": {
+            "menu": "কর্মচারী",
+            "submenu": {
+                "jobPosition": "চাকুরীর পদসমূহ",
+                "employee": "কর্মচারীদের তালিকা"
+            }
+        },
+        "department": {
+            "menu": "ডিপার্টমেন্ট",
+            "submenu": "ডিপার্টমেন্টের তালিকা"
+        },
+        "subscription": {
+            "menu": "সাবস্ক্রিপশন"
+        },
+        "report": {
+            "buyerDue" : "পাওনা",
+            "sale": "বিক্রয়"
+        }
+    }
+}
