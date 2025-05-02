@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Constants\Constants;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->merge([
-            'email' => $request->input('mobile_number') . '@muhuri.app',
+            'email' => $request->input('mobile_number') . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN,
         ]);
 
         $request->authenticate();

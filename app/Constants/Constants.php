@@ -70,4 +70,9 @@ class Constants
 
     public const SUBSCRIPTION = 'subscription';
     public const SMS_PURCHASE = 'sms_purchase';
+    public const DOMAIN = 'mkrdev.xyz';
+    public const SUB_DOMAIN = 'muhuri-web';
+    public const DEV_SERVER = 'dev';
+    public const STAGING_SERVER = 'staging';
+    public const USER_PANEL = 'muhuri';
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Constants\Constants;
 use App\Models\Configuration;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +64,7 @@ class ConfigurationSeeder extends Seeder
             ],
             [
                 'option_name' => 'support_email',
-                'option_value' => 'support@muhuri.app'
+                'option_value' => 'support' . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN
             ],
             [
                 'option_name' => 'support_telephone',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\Tenant;
 
+use App\Constants\Constants;
 use App\Services\ConfigurationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -55,15 +56,16 @@ class TenantController extends Controller
         $appEnv = config('app.env');
 
         if ($appEnv === 'production') {
-            $baseUrl = $validatedData['workspace'].'.muhuri.app';
+            $baseUrl = $validatedData['workspace'] . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         } else if ($appEnv === 'staging') {
-            $baseUrl = $validatedData['workspace'].'.staging.muhuri.app';
+            $baseUrl = $validatedData['workspace'] . '.' . Constants::STAGING_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         } else {
-            $baseUrl = $validatedData['workspace'].'.dev.muhuri.app';
+            $baseUrl = $validatedData['workspace'] . '.' . Constants::DEV_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         }
 
         return response()->json([
-            'message' => 'Admin user created successfully'
+            'message' => 'Admin user created successfully',
+            'baseUrl' => $baseUrl
         ]);
     }
 }

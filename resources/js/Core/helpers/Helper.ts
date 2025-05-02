@@ -37,7 +37,7 @@ export const getLogoSrc = (logo: any) => {
     if(logoPath) {
       return logoPath;
     } else {
-      return getAssetPath('media/logos/logo.png');
+      return 'media/logos/logo.png';
     }
 }
 

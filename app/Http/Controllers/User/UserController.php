@@ -74,7 +74,7 @@ class UserController extends Controller implements HasMiddleware
     public function store(UserCreateRequest $request)
     {
         $validatedData = $request->validated();
-        $validatedData['email'] = $validatedData['mobile_number'] . '@muhuri.app';
+        $validatedData['email'] = $validatedData['mobile_number'] . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         $user = $this->userService->createUser($validatedData);
         $status = $user ? Constants::SUCCESS : Constants::ERROR;
         $message = $user ? __('message.custom.user.store.success') : __('message.custom.user.store.error');
@@ -112,7 +112,7 @@ class UserController extends Controller implements HasMiddleware
     public function updateDetails(UserUpdateRequest $request, User $user)
     {
         $validatedData = $request->validated();
-        $validatedData['email'] = $validatedData['mobile_number'] . '@muhuri.app';
+        $validatedData['email'] = $validatedData['mobile_number'] . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         $user = $this->userService->getUserDetails($user);
         $isUpdated = $this->userService->updateUser($user, ['mobile_number' => $validatedData['mobile_number'], 'name' => $validatedData['name']]);
         $status = $isUpdated ? Constants::SUCCESS : Constants::ERROR;

@@ -5,7 +5,7 @@
     id="kt_app_sidebar_footer"
   >
     <a
-      href="https://muhuri.app/contact-us"
+      href="https://muhuri.mkrdev.xyz/contact-us"
       target="_blank"
       class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
       data-bs-toggle="tooltip"

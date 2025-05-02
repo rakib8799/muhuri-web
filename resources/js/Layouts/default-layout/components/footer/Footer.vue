@@ -13,7 +13,7 @@
       <div class="text-gray-900 order-2 order-md-1 mx-auto">
         <span class="text-muted fw-semibold">{{ currentYear }}©</span>
         <a
-          href="https://muhuri.app"
+          href="https://muhuri.mkrdev.xyz"
           target="_blank"
           class="text-gray-800 text-hover-primary"
           >{{ $t('appInfo.name') }}</a

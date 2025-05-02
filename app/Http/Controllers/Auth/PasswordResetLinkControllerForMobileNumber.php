@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Constants\Constants;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Services\SMS\OTPService;
@@ -51,7 +52,7 @@ class PasswordResetLinkControllerForMobileNumber extends Controller
         ]);
 
         $request->merge([
-            'email' => $request->input('mobile_number') . '@muhuri.app',
+            'email' => $request->input('mobile_number') . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN,
         ]);
 
 

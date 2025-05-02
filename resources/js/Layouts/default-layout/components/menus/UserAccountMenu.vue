@@ -1,133 +1,120 @@
 <template>
-  <!--begin::Menu-->
-  <div
-    class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold py-4 fs-6 w-275px"
-    data-kt-menu="true"
-  >
-    <!--begin::Menu item-->
-    <div class="menu-item px-3">
-      <div class="menu-content d-flex align-items-center px-3">
-        <!--begin::Avatar-->
-        <div class="symbol symbol-50px me-5">
-          <!-- <img alt="Logo" :src="getAssetPath('media/avatars/300-3.jpg')" /> -->
-          <div class="symbol-label fs-3 bg-light-danger text-danger">{{ getInitials(user) }}</div>
-        </div>
-        <!--end::Avatar-->
+    <!--begin::Menu-->
+    <div
+      class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold py-4 fs-6 w-275px"
+      data-kt-menu="true"
+    >
+      <!--begin::Menu item-->
+      <div class="menu-item px-3">
+        <div class="menu-content d-flex align-items-center px-3">
+          <!--begin::Avatar-->
+          <div class="symbol symbol-50px me-5">
+            <!-- <img alt="Logo" :src="getAssetPath('media/avatars/300-3.jpg')" /> -->
+            <div class="symbol-label fs-3 bg-light-danger text-danger">{{ getInitials(user) }}</div>
+          </div>
+          <!--end::Avatar-->
 
-        <!--begin::Username-->
-        <div class="d-flex flex-column">
-          <div class="fw-bold d-flex align-items-center fs-5">
-            {{ name }}
-            <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2"
-              >Pro</span
+          <!--begin::Username-->
+          <div class="d-flex flex-column">
+            <div class="fw-bold d-flex align-items-center fs-5">
+              {{ name }}
+              <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2"
+                >Pro</span
+              >
+            </div>
+            <Link :href="''" class="fw-semibold text-muted text-hover-primary fs-7"
+              >{{ email }}</Link
             >
           </div>
-          <Link :href="''" class="fw-semibold text-muted text-hover-primary fs-7"
-            >{{ mobile_number }}</Link
-          >
+          <!--end::Username-->
         </div>
-        <!--end::Username-->
       </div>
+      <!--end::Menu item-->
+
+      <!--begin::Menu separator-->
+      <div class="separator my-2"></div>
+      <!--end::Menu separator-->
+
+      <!--begin::Menu item-->
+      <div class="menu-item px-5">
+        <Link :href="route('profile.edit')" class="menu-link px-5">
+          {{$t('user.header.profile.edit')}}
+        </Link>
+
+      </div>
+      <!--end::Menu item-->
+
+      <!--begin::Menu item-->
+      <div class="menu-item px-5">
+        <Link href="/logout" method="post" as="button" class="menu-link btn px-5">
+            {{ $t('buttonValue.signOut') }}
+        </Link>
+      </div>
+      <!--end::Menu item-->
     </div>
-    <!--end::Menu item-->
+    <!--end::Menu-->
+  </template>
 
-    <!--begin::Menu separator-->
-    <div class="separator my-2"></div>
-    <!--end::Menu separator-->
+  <script lang="ts" setup>
+  import { getAssetPath } from "@/Core/helpers/Assets";
+  import { computed, defineComponent } from "vue";
+  import { useI18n } from "vue-i18n";
+  import { useAuthStore } from "@/Stores/auth";
+  import { useRouter } from "vue-router";
+  import { Link, router } from '@inertiajs/vue3';
+  import { usePage } from '@inertiajs/vue3';
+  import { getInitials } from '@/Core/helpers/Helper';
 
-    <!--begin::Menu item-->
-    <div class="menu-item px-5">
-      <Link :href="route('profile.edit')" class="menu-link px-5">
-        {{$t('user.header.profile.edit')}}
-      </Link>
+  const vRouter = useRouter();
+  const i18n = useI18n();
+  const store = useAuthStore();
 
-    </div>
-    <!--end::Menu item-->
+  const user = usePage().props.auth.user;
+  const {name} = user;
+  const {email} = user;
 
-    <!--begin::Menu item-->
-    <div class="menu-item px-5">
-      <Link :href="''" @click="signOut()" class="menu-link px-5"> {{ $t('buttonValue.signOut') }} </Link>
-    </div>
-    <!--end::Menu item-->
-  </div>
-  <!--end::Menu-->
-</template>
+  i18n.locale.value = localStorage.getItem("lang")
+      ? (localStorage.getItem("lang") as string)
+      : "en";
 
-<script lang="ts" setup>
-import { getAssetPath } from "@/Core/helpers/Assets";
-import { computed, defineComponent, onMounted } from "vue";
-import { useI18n } from "vue-i18n";
-import { useAuthStore } from "@/Stores/auth";
-import { useRouter } from "vue-router";
-import { Link, router } from '@inertiajs/vue3'
-import { usePage } from '@inertiajs/vue3';
-import { getInitials } from '@/Core/helpers/Helper';
-import axios from "axios";
+  const countries = {
+      en: {
+      flag: getAssetPath("/media/flags/united-states.svg"),
+      name: "English",
+      },
+      es: {
+      flag: getAssetPath("/media/flags/spain.svg"),
+      name: "Spanish",
+      },
+      de: {
+      flag: getAssetPath("/media/flags/germany.svg"),
+      name: "German",
+      },
+      ja: {
+      flag: getAssetPath("/media/flags/japan.svg"),
+      name: "Japanese",
+      },
+      fr: {
+      flag: getAssetPath("/media/flags/france.svg"),
+      name: "French",
+      },
+  };
 
-const vRouter = useRouter();
-const i18n = useI18n();
-const store = useAuthStore();
+  const signOut = () => {
+      localStorage.removeItem('permissions');
+      router.post('/logout');
+  };
 
-const user = usePage().props.auth.user;
-const {name} = user;
-const {mobile_number} = user;
+  const setLang = (lang: string) => {
+      localStorage.setItem("lang", lang);
+      i18n.locale.value = lang;
+  };
 
-i18n.locale.value = localStorage.getItem("lang")
-    ? (localStorage.getItem("lang") as string)
-    : "bn";
+  const currentLanguage = computed(() => {
+      return i18n.locale.value;
+  });
 
-const countries = {
-    en: {
-    flag: getAssetPath("media/flags/united-states.svg"),
-    name: "English",
-    },
-    es: {
-    flag: getAssetPath("media/flags/spain.svg"),
-    name: "Spanish",
-    },
-    de: {
-    flag: getAssetPath("media/flags/germany.svg"),
-    name: "German",
-    },
-    ja: {
-    flag: getAssetPath("media/flags/japan.svg"),
-    name: "Japanese",
-    },
-    fr: {
-    flag: getAssetPath("media/flags/france.svg"),
-    name: "French",
-    },
-};
-
-onMounted(async () => {
-    try {
-        const response = await axios.get('/timezone/date-format');
-        const {timezone, date_format} = response.data;
-
-        localStorage.setItem('timezone', JSON.stringify((timezone)));
-        localStorage.setItem('date_format', JSON.stringify((date_format)));
-    } catch (error) {
-        console.error('Failed to fetch date related data:', error);
-    }
-});
-
-const signOut = () => {
-    localStorage.removeItem('permissions');
-    localStorage.removeItem('timezone');
-    localStorage.removeItem('date_format');
-    router.post('/logout/');
-};
-
-const setLang = (lang: string) => {
-    localStorage.setItem("lang", lang);
-    i18n.locale.value = lang;
-};
-
-const currentLanguage = computed(() => {
-    return i18n.locale.value;
-});
-
-const currentLangugeLocale = computed(() => {
-    return countries[i18n.locale.value as keyof typeof countries];
-});
-</script>
+  const currentLangugeLocale = computed(() => {
+      return countries[i18n.locale.value as keyof typeof countries];
+  });
+  </script>

@@ -2,6 +2,7 @@
 
 namespace App\Services\User;
 
+use App\Constants\Constants;
 use App\Models\HR\Employee;
 use App\Models\User;
 use App\Services\ConfigurationService;
@@ -70,7 +71,7 @@ class UserService extends BaseModelService
 
             $oldUser = clone $user;
             $updatedName = $validatedData['name'] ?? $oldUser->name;
-            $updatedEmail = $validatedData['mobile_number'] . '@muhuri.app' ?? $oldUser->email;
+            $updatedEmail = $validatedData['mobile_number'] . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN ?? $oldUser->email;
             $updatedMobileNumber = $validatedData['mobile_number'] ?? $oldUser->mobile_number;
             $user->update($validatedData);
 

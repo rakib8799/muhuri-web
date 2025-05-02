@@ -10,9 +10,9 @@
                 <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
                     <!--begin::Image-->
                     <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        :src="getAssetPath('media/auth/agency.png')" alt=""/>
+                        src="media/auth/agency.png" alt=""/>
                     <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20"
-                        :src="getAssetPath('assets/media/auth/agency-dark.png')" alt=""/>
+                        src="assets/media/auth/agency-dark.png" alt=""/>
                     <!--end::Image-->
                     <!--begin::Title-->
                     <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">মুহুরী - সামলান খুব সহজেই</h1>
@@ -39,7 +39,7 @@
                                 @submit="onSubmitLogin">
                                 <!--begin::Heading-->
                                 <div class="text-center">
-                                    <img alt="Logo" :src="getAssetPath('media/logos/logo.png')"
+                                    <img alt="Logo" src="media/logos/logo.png"
                                         class="h-60px h-lg-75px mb-11"/>
                                     <h1 class="text-gray-900 fw-bolder mb-3">{{ $t('auth.login.title') }}</h1>
                                     <div v-if="props?.status" class="mb-4 fs-3 text-success">
@@ -52,7 +52,7 @@
                                 <div class="fv-row mb-8">
                                     <Field class="form-control form-control-lg bg-transparent" type="text"
                                         name="mobile_number"
-                                        autocomplete="off" v-model="formData.mobile_number" :placeholder="$t('auth.login.mobileNumber')"/>
+                                        autocomplete="off" v-model="formData.mobile_number" :placeholder="$t('auth.login.mobileNumb')"/>
                                     <ErrorMessage :errorMessage="formData.errors.mobile_number"/>
                                     <ErrorMessage :errorMessage="formData.errors.email"/>
                                 </div>

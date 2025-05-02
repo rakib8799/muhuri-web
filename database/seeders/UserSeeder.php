@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         DB::table('users')->truncate();
         $user = User::factory()->create([
             'name' => Constants::ROLE_ADMIN,
-            'email' => '01673628369@muhuri.app',
+            'email' => '01673628369' . '@' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN,
             'mobile_number' => '01673628369',
             'password' => Hash::make('12345'),
         ]);
