@@ -1,0 +1,1083 @@
+{
+    "label": {
+        "name": "Name",
+        "email": "Email",
+        "slug": "Slug",
+        "status": "Status",
+        "mobileNumber": "Mobile Number",
+        "address": "Address",
+        "note": "Note",
+        "division": "Division",
+        "district": "District",
+        "upazila": "Upazila",
+        "union": "Union",
+        "village": "Village",
+        "actions": "Actions",
+        "date": "Date",
+        "rate": "Rate",
+        "createdBy": "Created By",
+        "paymentStatus": "Payment Status",
+        "transactionId": "Transaction ID",
+        "buyer": "Buyer",
+        "totalTransaction": "Total Transaction",
+        "totalPayment": "Total Payment",
+        "totalDue": "Total Due",
+        "smsType": "SMS Type",
+        "message": "Message",
+        "errorMessage": "Error Message",
+        "smsCount": "SMS Count",
+        "editItem": "Edit Item",
+        "invoiceNumber": "Invoice Number",
+        "items": "Items",
+        "itemName": "Item Name",
+        "box": "Box",
+        "poly": "Poly",
+        "mir": "Mir",
+        "quantity": "Quantity",
+        "unitPrice": "Unit Price",
+        "totalPrice": "Total Price",
+        "totalAmount": "Total Amount",
+        "total": "Total",
+        "discountAmount": "Discount",
+        "grandTotal": "Grand Total",
+        "due": "Due",
+        "paid": "Paid",
+        "brand": "Brand",
+        "description": "Description",
+        "receiverSignature": "Receiver Signature",
+        "producerSignature": "Producer Signature",
+        "employeeSignature": "Employee Signature"
+    },
+
+    "placeholder": {
+        "name": "Name",
+        "email": "Email",
+        "slug": "Slug",
+        "status": "Status",
+        "mobileNumber": "Mobile Number",
+        "address": "Address",
+        "note": "Note",
+        "division": "Division",
+        "district": "District",
+        "upazila": "Upazila",
+        "union": "Union",
+        "village": "Village",
+        "date": "Date",
+        "selectBrand": "Select Brand",
+        "box": "Box",
+        "poly": "Poly",
+        "mir": "Mir",
+        "quantity": "Quantity",
+        "unitPrice": "Unit Price",
+        "totalPrice": "Total Price"
+    },
+
+    "buttonValue": {
+        "submit": "Submit",
+        "update": "Update",
+        "filter": "Filter",
+        "reset": "Reset",
+        "apply": "Apply",
+        "edit": "Edit",
+        "login": "Login",
+        "logout": "Logout",
+        "discard": "Discard",
+        "actions": "Actions",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "signIn": "Sign In",
+        "signOut": "Sign Out",
+        "resetPassword": "Reset Password",
+        "forgotPassword": "Forgot Password",
+        "resendVerificationEmail": "Resend Verification Email",
+        "verifyOTP": "Verify OTP",
+        "resendVerificationSMS": "Resend Verification SMS",
+        "renewSubscription": "Renew Subscription",
+        "changePlan": "Change Plan",
+        "select": "Select",
+        "pay": "Pay"
+    },
+
+    "validation": {
+        "item": {
+            "required": "Item is required."
+        },
+        "brand": {
+            "required": "Brand is required."
+        },
+        "totalPoly": {
+            "numeric": "Total Poly must be a number",
+            "greater": "Total Poly must be a greater than 0"
+        },
+        "mir": {
+            "numeric": "Mir must be a number",
+            "greater": "Mir must be a greater than 0"
+        },
+        "quantity": {
+            "numeric": "Quantity must be a number",
+            "greater": "Quantity must be a greater than 0"
+        },
+        "unitPrice": {
+            "numeric": "Unit Price must be a number",
+            "greater": "Unit Price must be a greater than 0"
+        },
+        "totalPrice": {
+            "numeric": "Total Price Price must be a number",
+            "greater": "Total Price must be a greater than 0"
+        }
+    },
+
+    "configuration": {
+        "label": {
+            "companyName": "Company Name (English)",
+            "industryName": "Industry Name",
+            "organizationNumber": "Organization Number",
+            "country": "Country",
+            "otherLanguage": "Other Language",
+            "timezone": "Timezone",
+            "dateFormat": "Date Format",
+            "weekStartDay": "Week Start Day",
+            "weekends": "Weekends",
+            "lunchBreakTime": "Lunch Break Time (in minutes)",
+            "isRoster": "Is Roster",
+            "email": "Email",
+            "adminEmail": "Admin Email",
+            "website": "Website",
+            "telephoneNumber": "Telephone Number",
+            "address": "Address",
+            "companyNameBangla": "Company Name (Bangla)",
+            "categoryName": "Category Name",
+            "tradeLicenseNumber": "Trade License Number",
+            "mobileNumber": "Mobile Number",
+            "additionalMobileNumber": "Additional Mobile Number",
+            "adminContactNumber": "Admin Contact Number",
+            "adminContact": "Admin Contact",
+            "contactNumber": "Contact Number",
+            "smsSendPermission": "SMS Send Permission"
+        },
+        "placeholder": {
+            "companyName": "Company Name in English",
+            "industryName": "Industry name",
+            "organizationNumber": "Organization number",
+            "country": "Select country",
+            "otherLanguage": "Select other language",
+            "timezone": "Select timezone",
+            "dateFormat": "Select date format",
+            "weekStartDay": "Select week start day",
+            "weekends": "Select weekends",
+            "lunchBreakTime": "Lunch Break Time (in minutes)",
+            "email": "Email",
+            "adminEmail": "Admin email",
+            "website": "Website url",
+            "telephoneNumber": "Telephone number",
+            "address": "Address",
+            "companyNameBangla": "Company Name in Bangla",
+            "tradeLicenseNumber": "Trade License Number",
+            "mobileNumber": "Mobile Number",
+            "additionalMobileNumber": "Additional Mobile Number",
+            "adminContactNumber": "Admin Contact Number"
+        },
+        "header": {
+            "details": "Details",
+            "basicInfo": "Basic",
+            "additionalInfo": "Additional",
+            "contactInfo": "Contact",
+            "systemSettings": "System Settings",
+            "show": {
+                "basicInformation": "Basic Information",
+                "additionalInformation": "Additional Information",
+                "contactInformation": "Contact Information"
+            },
+            "title": {
+                "basicInformation": "Update basic information of settings",
+                "additionalInformation": "Update additional information of settings",
+                "contactInformation": "Update contact information of settings",
+                "tooltip": "Country of origination"
+            }
+        }
+    },
+    "user": {
+        "label": {
+            "password": "Password",
+            "currentPassword": "Current Password",
+            "newPassword": "New Password",
+            "confirmNewPassword": "Confirm New Password",
+            "resetPassword": "Reset Password",
+            "deleteAccount": "Delete Account",
+            "assignRole": "Assign Role",
+            "role": "Role",
+            "status": "Status",
+            "lastLogin": "Last Login",
+            "joiningDate": "Joining Date"
+        },
+        "placeholder": {
+            "name": "Name",
+            "email": "Email",
+            "currentPassword": "Current password",
+            "newPassword": "New password",
+            "confirmNewPassword": "Confirm new password",
+            "assignRole": "Role",
+            "searchUsers": "Search users"
+        },
+        "header": {
+            "add": "Add User",
+            "edit": "Edit User",
+            "details": "Details",
+            "overview": "Overview",
+            "security": "Security",
+            "authenticationLogs": "Authentication Logs",
+            "activityLogs": "Activity Logs",
+            "show": {
+                "profile": "Profile",
+                "upcomingMeetings": "2 Upcoming meetings",
+                "message": "Message",
+                "date": "Date",
+                "ipAddress": "IP Address",
+                "userAgent": "User Agent"
+            },
+            "title": {
+                "updateUserDetails": "Update User Details",
+                "updateEmailAddress": "Update Email",
+                "updateMobileNumber": "Update Mobile Number",
+                "updatePassword": "Update Password",
+                "updateRoles": "Update Roles"
+            },
+            "info": {
+                "email": {
+                    "validEmail": "Please note that a valid email is required to complete the email verification.",
+                    "unverified": "Your email is unverified.",
+                    "verification": "Click here to re-send the verification email.",
+                    "newVerification": "A new verification link has been sent to your email."
+                },
+                "delete": {
+                    "downloadData": "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.",
+                    "passwordConfirmation": "Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account."
+                }
+            },
+            "profile": {
+                "edit": "My Profile",
+                "update": {
+                    "profileInfo": "Profile Information",
+                    "signInMethod": "Sign-in Method"
+                }
+            }
+        }
+    },
+
+    "sms": {
+        "label": {
+            "sendSMS": "Send SMS",
+            "smsLog": "SMS Log",
+            "remainingSMS": "Remaining SMS",
+            "smsTemplate": "SMS Template",
+            "enTemplate": "Template (English)",
+            "bnTemplate": "Template (Bangla)",
+            "paymentId": "Payment ID"
+        },
+        "placeholder": {
+            "searchSMS": "Search Purchase SMS",
+            "searchSMSTemplate": "Search SMS Template",
+            "enTemplate": "SMS Template in English",
+            "bnTemplate": "SMS Template in Bangla"
+        },
+        "header": {
+            "purchase": "SMS Purchase",
+            "paymentConfirmation": "Payment Confirmation",
+            "smsPurchaseDetails": "SMS Purchase History",
+            "addSMSTemplate": "Add SMS Template",
+            "editSMSTemplate": "Edit SMS Template"
+        },
+        "unit": "Per SMS",
+        "title": {
+            "remaining": "Your Remaining SMS is",
+            "please": "Please",
+            "purchaseSMS": "Purchase SMS"
+        }
+    },
+
+    "role": {
+        "label": {
+            "roleName": "Name",
+            "rolePermission": "Permission",
+            "administratorAccess": "Administrator Access",
+            "selectAll": "Select All"
+        },
+        "placeholder": {
+            "roleName": "Role name"
+        },
+        "header": {
+            "add": "Add Role",
+            "edit": "Edit Role",
+            "usersAssigned": "Users Assigned"
+        }
+    },
+    "employee": {
+        "label": {
+            "fullName": "Full Name",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "staffId": "Staff ID",
+            "socialSecurityNumber": "Social Security Number",
+            "dateOfBirth": "Date Of Birth",
+            "bloodGroup": "Blood Group",
+            "gender": "Gender",
+            "maritalStatus": "Marital Status",
+            "userName": "User Name",
+            "country": "Country",
+            "permanentAddress": "Permanent Address",
+            "address": "Address",
+            "presentAddress": "Present Address",
+            "emergencyContact": {
+                "title": "Emergency Contact",
+                "name": "Name",
+                "relation": "Relation",
+                "number": "Number"
+            },
+            "jobTitle": "Job Title",
+            "jobPosition": "Job Position",
+            "joiningDate": "Joining Date",
+            "approver": "Approver",
+            "departmentName": "Department Name",
+            "branchName": "Branch Name",
+            "manager": "Manager",
+            "leaveManager": "Leave Manager",
+            "salary": "Salary",
+            "hourlyRate": "Hourly Rate",
+            "hourLimitWeekly": "Hour Limit Weekly",
+            "overtimeRate": "Overtime Rate",
+            "overtimeLimit": "Overtime Limit",
+            "workPermit": "Work Permit",
+            "passportNumber": "Passport Number",
+            "visaNumber": "Visa Number",
+            "visaExpiryDate": "Visa Expiry Date",
+            "workPermitNumber": "Work Permit Number",
+            "workPermitExpirationDate": "Work Permit Expiration Date",
+            "others": "Others",
+            "linkedinProfile": "Linkedin Profile",
+            "eTinNumber": "E-Tin Number",
+            "nfcCard": "NFC Card",
+            "geoFencing": "Geo Fencing",
+            "photoTaking": "Photo Taking",
+            "visaInformation": "Visa Information",
+            "workPermitInformation": "Work Permit Information",
+            "departureInformation": "Departure Information",
+            "departureReason": "Departure Reason",
+            "departureDescription": "Departure Description",
+            "departureDate": "Departure Date"
+        },
+        "placeholder": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "staffId": "Staff ID",
+            "socialSecurityNumber": "Social Security Number",
+            "mobileNumber": "Mobile Number",
+            "dateOfBirth": "Date Of Birth",
+            "bloodGroup": "Select Blood Group",
+            "gender": "Select Gender",
+            "maritalStatus": "Select Marital Status",
+            "userName": "Select User Name",
+            "country": "Select Country",
+            "address": "Address",
+            "emergencyContact": {
+                "name": "Name",
+                "relation": "Relation",
+                "number": "Number"
+            },
+            "jobTitle": "Job Title",
+            "jobPosition": "Select Job Position",
+            "departmentName": "Select Department Name",
+            "branchName": "Select Branch Name",
+            "manager": "Select Manager",
+            "leaveManager": "Select Leave Manager",
+            "salary": "Salary",
+            "hourlyRate": "Hourly Rate",
+            "hourLimitWeekly": "Hour Limit Weekly",
+            "overtimeRate": "Overtime Rate",
+            "overtimeLimit": "Overtime Limit",
+            "passportNumber": "Passport Number",
+            "visaNumber": "Visa Number",
+            "visaExpiryDate": "Visa Expiry Date",
+            "workPermitNumber": "Work Permit Number",
+            "workPermitExpirationDate": "Work Permit Expiration Date",
+            "others": "Others",
+            "linkedinProfile": "Linkedin Profile",
+            "eTinNumber": "E-Tin Number",
+            "departureReason": "Departure Reason",
+            "departureDescription": "Departure Description",
+            "searchEmployees": "Search employees",
+            "searchAttendanceLogs": "Search attendance logs"
+        },
+        "header": {
+            "add": "Add Employee",
+            "details": "Details",
+            "basicInfo": {
+                "title":  "Basic Info",
+                "description": "Basic Information",
+                "add": "Add Employee Basic Information",
+                "edit": "Update Employee Basic Information"
+            },
+            "additionalInfo": {
+                "title":  "Additional Info",
+                "description": "Additional Information",
+                "edit": "Update Employee Additional Information"
+            },
+            "workInfo": {
+                "title":  "Work Info",
+                "description": "Work Information",
+                "edit": "Update Employee Work Information"
+            },
+            "departureInfo": {
+                "title":  "Departure Info",
+                "description": "Employee Departure Information",
+                "employeeTermination": "Employee Termination",
+                "departed": "Employee",
+                "terminate": "Terminate",
+                "rejoin": "Rejoin"
+            }
+        }
+    },
+    "jobPosition": {
+        "placeholder": {
+            "searchJobPositions": "Search job positions"
+        },
+        "header": {
+            "add": "Add Job Position",
+            "edit": "Edit Job Position"
+        }
+    },
+    "department": {
+        "label": {
+            "parentDepartment": "Parent Department"
+        },
+        "placeholder": {
+            "parentDepartment": "Select Parent Department",
+            "searchDepartments": "Search departments"
+        },
+        "header": {
+            "add": "Add Department",
+            "edit": "Edit Department",
+            "departmentDetails": "Department Details"
+        }
+    },
+    "subscription": {
+        "label": {
+            "billTo": "Bill To",
+            "customerName": "Customer Name",
+            "address": "Address",
+            "phone": "Phone",
+            "subscriptionPlan": "Subscription Plan",
+            "subscriptionFees": "Subscription Fees",
+            "subscriptionDuration": "Subscription Duration",
+            "billingMethod": "Billing Method",
+            "currency": "Currency",
+            "subscriptionID": "Subscription ID",
+            "started": "Started",
+            "status": "Status",
+            "ended": "Ended",
+            "trialStarted": "Trial Started",
+            "trialEnded": "Trial Ended",
+            "trial": "Trial Status",
+            "planName": "Plan Name",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "finalPrice": "Final Price",
+            "monthly": "Monthly",
+            "annual": "Yearly"
+        },
+        "placeholder": {
+            "searchSubscriptionHistory": "Search subscription history"
+        },
+        "header": {
+            "billingAddress": "Billing Address",
+            "currentSubscription": "Current Subscription",
+            "subscriptionPlanDetails": "Subscription Plan Details",
+            "paymentMethod": "Payment Method",
+            "subscriptionDetails": "Subscription Details",
+            "customer": "Customer",
+            "subscriptionHistory": "Subscription History",
+            "subscriptionPlan": "Subscription Plan",
+            "paymentConfirmation": "Payment Confirmation"
+        }
+    },
+
+    "buyer": {
+        "label": {
+            "previous_due": "Previous Due",
+            "joining_date": "Joining Date",
+            "totalTransaction": "Total Transaction",
+            "totalPayment": "Total Payment",
+            "totalDue": "Total Due",
+            "description": "Description",
+            "amount": "Amount",
+            "receiverSignature": "Receiver Signature",
+            "producerSignature": "Producer Signature",
+            "employeeSignature":"Employee Signature",
+            "transaction": "Transactions",
+            "atAGlance": "At a Glance",
+            "totalPurchase": "Total Purchase",
+            "totalSale": "Total Sale",
+            "totalExpense": "Total Expense",
+            "totalBuyerPayment": "Total Buyer Payment",
+            "totalSupplierPayment": "Total Supplier Payment"
+        },
+        "placeholder": {
+            "previous_due": "Previous Due",
+            "searchBuyers": "Search buyers"
+        },
+        "header": {
+            "add": "Add Buyer",
+            "sendDueReminder": "Send Due Reminder",
+            "edit": "Edit Buyer",
+            "transactions": "Transactions",
+            "payment": "Payments",
+            "atGlance": "At a Glance",
+            "show": {
+                "payment": "payment",
+                "buttonValue": {
+                    "addPayment": "Add Payment",
+                    "printInvoice":"Print Invoice"
+                }
+            }
+        }
+    },
+
+    "payment": {
+        "label": {
+            "amount": "Amount",
+            "paymentDate": "Payment Date",
+            "paymentMethod": "Payment Method",
+            "total": "Total"
+        },
+        "placeholder": {
+            "amount": "Amount",
+            "paymentDate": "Payment Date",
+            "paymentMethod": "Payment Method"
+        },
+        "title": {
+            "add": "Add Payment",
+            "edit": "Edit Payment"
+        }
+    },
+
+    "sale": {
+        "label": {
+            "saleDate": "Sale Date",
+            "invoiceNumber": "Invoice",
+            "buyer": "Buyer",
+            "paid": "Paid",
+            "totalAmount": "Total Amount",
+            "selectBuyer": "Select Buyer",
+            "items": "Items",
+            "itemName": "Item Name",
+            "box": "Box",
+            "poly": "Poly",
+            "mir": "Mir",
+            "quantity": "Quantity",
+            "unitPrice": "Unit Price",
+            "totalPrice": "Total",
+            "total": "Total",
+            "discountAmount": "Discount",
+            "grandTotal": "Grand",
+            "due": "Due",
+            "brand": "Brand",
+            "description": "Description",
+            "receiverSignature": "Receiver Signature",
+            "producerSignature": "Producer Signature",
+            "employeeSignature": "Employee Signature",
+            "saleType": "Type",
+            "subTotal": "Total",
+            "paidAmount": "Paid"
+        },
+        "placeholder": {
+            "selectBuyer": "Select Buyer",
+            "discountAmount": "Discount",
+            "paid": "Paid",
+            "selectItem": "Select Item",
+            "selectBrand": "Select Brand",
+            "box": "Box",
+            "poly": "Poly",
+            "mir": "Mir",
+            "quantity": "Quantity",
+            "unitPrice": "Unit Price",
+            "totalPrice": "Total Price",
+            "searchSale": "Search Sale"
+        },
+        "title": {
+            "addItem": "Add Item",
+            "updateItem": "Update Item"
+        },
+        "buttonValue": {
+            "larvaeSale": "Larvae Sale",
+            "otherSale": "Other Sale",
+            "addBuyer": "Add Buyer",
+            "addItem": "Add New Item",
+            "updateItem": "Update Item",
+            "printInvoice": "Print Invoice",
+            "delete": "Delete Sale",
+            "deleteOther": "Delete other Sale"
+        }
+    },
+
+    "purchase":{
+        "label": {
+            "purchaseDate": "Purchase Date",
+            "purchaseType": "Purchase Type",
+            "supplier": "supplier",
+            "selectedSupplier": "Selected Supplier"
+        },
+        "placeholder": {
+            "searchPurchase": "Search Purchase",
+            "selectedSupplier": "Selected Supplier"
+        },
+        "buttonValue": {
+            "otherPurchase": "Other Purchase",
+            "larvaePurchase": "Larvae Purchase",
+            "addSupplier": "Add Supplier",
+            "delete": "Delete Purchase",
+            "deleteOther": "Delete Other Purchase"
+        }
+    },
+
+    "brand": {
+        "label": {
+            "brandName": "Brand Name"
+        },
+        "placeholder": {
+            "brandName": "Brand Name",
+            "searchBrand": "Search Brand"
+        },
+        "title": {
+            "add": "Add Brand",
+            "edit": "Edit Brand"
+        },
+        "buttonValue": {
+            "addBrand": "Add Brand"
+        }
+    },
+
+    "item": {
+        "label": {
+            "sale": "Sale",
+            "purchase": "Purchase",
+            "expense": "Expense",
+            "type": "Type",
+            "itemName": "Item Name",
+            "slug": "Slug",
+            "description": "Description",
+            "parent": "Parent"
+        },
+        "placeholder": {
+            "type": "Type",
+            "itemName": "Item Name",
+            "description": "Description",
+            "searchItems": "Search Items"
+        },
+        "title": {
+            "add": "Add Expense",
+            "edit": "Edit Expense"
+        },
+        "buttonValue": {
+            "addExpense": "Add Expense"
+        }
+    },
+
+    "expense": {
+        "label": {
+            "itemName": "Item Name",
+            "amount": "Amount",
+            "createdAt": "Created At",
+            "selectItem":"Select Item",
+            "invoiceNumber": "Invoice Number"
+        },
+        "placeholder": {
+            "selectItem":"Select Item",
+            "invoiceNumber": "Invoice Number",
+            "searchExpense": "Search Expense"
+        },
+        "title": {
+            "add": "Add Expense",
+            "edit": "Edit Expense"
+        },
+        "buttonValue": {
+            "addNewExpense": "Add Expense"
+        }
+    },
+
+    "fiscalYear": {
+        "label": {
+            "year": "Year",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "runningStatus": "Running Status",
+            "status": "Status",
+            "actions": "Actions",
+            "fiscalYear": "Fiscal Year",
+            "note": "Note"
+        },
+        "placeholder": {
+            "fiscalYear": "Fiscal Year",
+            "StartDate": "Start Date",
+            "endDate": "End Date",
+            "note": "Note",
+            "searchFiscalYear": "Search Fiscal Year"
+        },
+        "title": {
+            "add": "Add Fiscal Year",
+            "edit": "Edit Fiscal Year",
+            "details": "Fiscal Year Details"
+        },
+        "buttonValue": {
+            "addFiscalYear": "Add Fiscal Year"
+        }
+    },
+
+    "supplier": {
+        "label": {
+            "joiningDate": "Joining Date",
+            "previousDue": "Previous Due"
+        },
+        "placeholder": {
+            "previousDue": "Previous Due",
+            "searchSuppliers": "Search Suppliers"
+        },
+        "title": {
+            "add": "Add Supplier",
+            "edit": "Edit Supplier"
+        }
+    },
+
+    "report": {
+        "label": {
+            "fromDate": "From {date}",
+            "toDate": "To {date}"
+        },
+        "placeholder": {
+            "searchSummaries": "Search summaries",
+            "searchSales": "Search sales"
+        }
+    },
+
+    "commonComponents": {
+        "addressComponent": {
+            "label": {
+                "addressLineOne": "Address Line One",
+                "addressLineTwo": "Address Line Two",
+                "floor": "Floor",
+                "city": "City",
+                "state": "State",
+                "zipCode": "Zip Code"
+            },
+            "placeholder": {
+                "addressLineOne": "Address line one",
+                "addressLineTwo": "Address line two",
+                "floor": "Floor",
+                "city": "City",
+                "state": "State",
+                "zipCode": "Zip code"
+            }
+        },
+        "employeeComponent": {
+            "label" : {
+                "name": "Name",
+                "employeeId": "Employee ID",
+                "jobTitle": "Job Title",
+                "status": "Status",
+                "joiningDate": "Joining Date",
+                "lastLogin": "Last Login"
+            },
+            "placeholder": {
+                "searchEmployees": "Search employees"
+            },
+            "header": {
+                "employeeList":"Employee List"
+            }
+        }
+    },
+
+    "filterOptions": {
+        "title": "Filter Options",
+        "subtitle": "Filter Option",
+        "user": {
+            "subtitle": {
+                "label": {
+                    "role": "Role",
+                    "status": "Status"
+                },
+                "placeholder": {
+                    "role": "Select Role",
+                    "status": "Select Status"
+                }
+            }
+        },
+        "employee": {
+            "subtitle": {
+                "label": {
+                    "department": "Department",
+                    "jobPosition": "Job Position",
+                    "branch": "Branch",
+                    "status": "Status"
+                },
+                "placeholder": {
+                    "department": "Select Department",
+                    "jobPosition": "Select Job Position",
+                    "branch": "Select Branch",
+                    "status": "Select Status"
+                }
+            }
+        },
+        "attendanceRequest": {
+            "subtitle": {
+                "label": {
+                    "status": "Status"
+                },
+                "placeholder": {
+                    "status": "Select Status"
+                }
+            }
+        },
+        "loggedInEmployeeAttendance": {
+            "subtitle": {
+                "label": {
+                    "status": "Status"
+                },
+                "placeholder": {
+                    "status": "Select Status"
+                }
+            }
+        },
+        "report": {
+            "subTitle": {
+                "label": {
+                    "fromDate": "From Date",
+                    "toDate": "To Date",
+                    "saleType": "Sale Type"
+                },
+                "placeholder": {
+                    "saleType": "Select sale type"
+                }
+            }
+        }
+    },
+    "confirmation": {
+        "changeStatus": "Are you sure you want to change status of",
+        "remove": {
+            "account": "Are you sure you want to delete your account?",
+            "others": "Are you sure you want to remove {messageTitle}?"
+        },
+        "wait": "Please wait...",
+        "permissionDenied": "Permission Denied",
+        "successfulLogin": "You have successfully logged in",
+        "gotIt": "Ok, got it",
+        "checkout": {
+            "forget": "You have forgotten to checkout in ",
+            "date": "date",
+            "continue": "Please check out first to continue"
+        },
+        "approve": {
+            "main": "Are you sure want to approve attendance of",
+            "sub": "for"
+        },
+        "decline": {
+            "main": "Are you sure want to decline attendance of",
+            "sub": "for"
+        },
+        "fiscalYear": {
+            "start": "Are you sure want to start year {year}?",
+            "end": "Are you sure want to end year {year}?"
+        },
+        "buyer": {
+            "noBuyers": "No buyers with due balance to send reminders",
+            "confirmReminder": "Are you sure want to send SMS reminders to {count} buyer(s)?",
+            "yesSendSMS": "Yes, Send SMS",
+            "reminderSent": "Due reminders sent successfully."
+        },
+        "sale": {
+            "edit": "Are you sure want to edit {itemName}",
+            "delete": "{buyer}'s sale of {saleDate}",
+            "deleteOther": "{buyer}'s other sale of {saleDate}"
+        },
+        "purchase": {
+            "delete": "{supplier}'s purchase of {purchaseDate}",
+            "deleteOther": "{supplier}'s Other purchase of {purchaseDate}"
+        },
+        "cancel": "Cancel"
+    },
+    "dataTable": {
+        "numbers": {
+            "first": "10",
+            "second": "25",
+            "third": "50"
+        },
+        "notFound": "No data found"
+    },
+    "tooltip": {
+        "title": {
+            "view": "View",
+            "edit": "Edit",
+            "editDetails": "Edit Details",
+            "delete": "Delete",
+            "changeStatus": "Change Status",
+            "startYear" : "Start Year",
+            "endYear" : "End Year"
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Sign In",
+            "forgotPassword": "Forgot Password",
+            "email": "Enter your email",
+            "mobileNumber": "Enter your mobile number",
+            "password": "Enter your password"
+        },
+        "signUpConfirmation": {
+            "title": "Welcome",
+            "description": "You have successfully activated your account. Please login"
+        },
+        "forgotPassword": {
+            "title": "Forgot Password",
+            "description": "Enter your mobile number to reset your password.",
+            "label": {
+                "email": "Email"
+            },
+            "placeholder": {
+                "email": "Email"
+            }
+        },
+        "resetPassword": {
+            "title": "Reset Password",
+            "description": "Enter your new password to reset your password.",
+            "label": {
+                "email": "Email",
+                "newPassword": "New Password",
+                "confirmNewPassword": "Confirm New Password",
+                "resetPassword": "Your password has been successfully reset. Please log in now."
+            },
+            "placeholder": {
+                "email": "Email",
+                "newPassword": "New Password",
+                "confirmNewPassword": "Confirm New Password"
+            }
+        },
+        "verifyEmail": {
+            "title": "Email Verification",
+            "message": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, please click on the Resend Verification Email button to receive the email.",
+            "linkSent": "A new verification link has been sent to the email address you provided during registration."
+        },
+        "verifySMS": {
+            "title": "SMS Verification",
+            "message": "Thanks for signing up! Before getting started, could you verify your mobile number by clicking on the verify otp button we just messaged to you? If you didn't receive the otp, please click on the Resend SMS button to receive the otp message.",
+            "linkSent": "A new otp has been sent to the mobile number you provided during registration."
+        }
+    },
+    "appInfo": {
+        "name": "MUHURI"
+    },
+    "links": {
+        "footer": {
+            "terms": "Terms",
+            "plans": "Plans",
+            "contactUs": "Contact Us"
+        }
+    },
+    "themeMode": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "sidebarMenu": {
+        "dashboard": "Dashboard",
+        "section": {
+            "admin": "Admin",
+            "hr": "HR",
+            "employee": "Employee",
+            "report": "Report"
+        },
+        "configuration": {
+            "menu": "Settings"
+        },
+        "userManagement": {
+            "menu": "User Management",
+            "submenu": {
+                "roles": "Roles",
+                "users": "Users"
+            }
+        },
+        "smsManagement": {
+            "menu": "SMS Management",
+            "submenu": {
+                "smsDashboard": "SMS Dashboard",
+                "smsPurchaseHistory": "SMS Purchase"
+            }
+        },
+        "items": {
+            "menu": "Items"
+        },
+        "buyerManagement": {
+            "menu": "Buyers"
+        },
+        "orderManagement": {
+            "menu": "Order Management",
+            "subMenu": {
+                "sales": "Sales"
+            }
+        },
+        "expenseManagement": {
+            "menu": "Expense Management"
+        },
+        "purchaseManagement": {
+            "menu": "Purchase Management",
+            "subMenu": {
+                "purchases": "Purchases",
+                "suppliers": "Suppliers"
+            }
+        },
+        "brand": {
+            "menu": "Brands"
+        },
+        "fiscalYear": {
+            "menu": "Fiscal Year"
+        },
+        "branch": {
+            "menu": "Branch",
+            "submenu": "Branch List"
+        },
+        "employee": {
+            "menu": "Employee",
+            "submenu": {
+                "jobPosition": "Job Position",
+                "employee": "Employee List"
+            }
+        },
+        "department": {
+            "menu": "Department",
+            "submenu": "Department List"
+        },
+        "leave": {
+            "menu": {
+                "admin": "Time Off Management",
+                "employee": "Time Off"
+            },
+            "submenu": {
+                "leaveType": "Leave Type",
+                "leaveApplication": "Leave Application",
+                "pendingLeaveApplication": "Pending Leave Application"
+            }
+        },
+        "leaveRequests": {
+            "menu": "Leave Requests"
+        },
+        "attendanceRequests": {
+            "menu": "Attendance Requests"
+        },
+        "employeeAttendance": {
+            "menu": "Attendance"
+        },
+        "subscription": {
+            "menu": "Subscription"
+        },
+        "report": {
+            "buyerDue" : "Buyer Due",
+            "sale": "Sale"
+        }
+    }
+}
