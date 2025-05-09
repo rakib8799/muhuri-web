@@ -39,8 +39,8 @@
                                 @submit="onSubmitLogin">
                                 <!--begin::Heading-->
                                 <div class="text-center">
-                                    <img alt="Logo" src="media/logos/logo.png"
-                                        class="h-60px h-lg-75px mb-11"/>
+                                    <img alt="Logo" src="media/logos/mkr-logo.png"
+                                        style="height: 25vh;"/>
                                     <h1 class="text-gray-900 fw-bolder mb-3">{{ $t('auth.login.title') }}</h1>
                                     <div v-if="props?.status" class="mb-4 fs-3 text-success">
                                         {{ $t('auth.resetPassword.label.resetPassword') }}
@@ -129,9 +129,9 @@ const props = defineProps({
 });
 
 const formData = useForm({
-    email: '',
-    mobile_number: '',
-    password: ''
+    email: '01332995033',
+    mobile_number: '01332995033',
+    password: '12345'
 });
 
 const onSubmitLogin = async () => {

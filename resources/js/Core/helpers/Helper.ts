@@ -37,7 +37,7 @@ export const getLogoSrc = (logo: any) => {
     if(logoPath) {
       return logoPath;
     } else {
-      return 'media/logos/logo.png';
+      return 'media/logos/mkr-logo.png';
     }
 }
 

@@ -11,13 +11,13 @@
                     "
                     alt="Logo"
                     :src="getLogoSrc(logo)"
-                    class="h-30px app-sidebar-logo-default"
+                    class="app-sidebar-logo-default" style="height: 15vh;"
                 />
                 <img
                     v-if="themeMode === 'light' && layout === 'light-sidebar'"
                     alt="Logo"
                     :src="getLogoSrc(logo)"
-                    class="h-30px app-sidebar-logo-default"
+                    class="app-sidebar-logo-default" style="height: 15vh;"
                 />
                 <a href="/" class="d-flex flex-column">
                     <span class="m-3 lead fw-bold text-gray-800 app-sidebar-logo-default py-0 my-0">{{ caplitalize(workspace) }}</span>
@@ -29,7 +29,7 @@
                 <img
                     alt="Logo"
                     :src="getLogoSrc(logo)"
-                    class="h-30px app-sidebar-logo-minimize"
+                    class="app-sidebar-logo-minimize" style="height: 5vh;"
                 />
             </div>
         </a>
@@ -39,7 +39,7 @@
             v-if="sidebarToggleDisplay"
             ref="toggleRef"
             id="kt_app_sidebar_toggle"
-            class="app-sidebar-toggle btn btn-icon btn-primary btn-sm btn-color-dark btn-active-color-dark h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
+            class="app-sidebar-toggle btn btn-icon btn-primary btn-sm btn-color-dark btn-active-color-dark w-30px position-absolute top-50 start-100 translate-middle rotate"
             data-kt-toggle="true"
             data-kt-toggle-state="active"
             data-kt-toggle-target="body"
