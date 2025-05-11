@@ -28,7 +28,8 @@ git pull origin main
 
 # Ensure the app is up-to-date with PHP dependencies
 echo "📦 Installing PHP dependencies..."
-composer install
+rm -rf vendor/
+composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Laravel specific configurations (environment file, key generation, etc.)
 echo "🔐 Setting up Laravel application..."
