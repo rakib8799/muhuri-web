@@ -59,33 +59,23 @@ sudo chmod -R 775 "$APP_DIR/storage"
 # Run the backup
 sudo -u "$USER" $PHP artisan backup:run --only-db --disable-notifications || echo "⚠️ Database backup skipped or failed"
 
-# === STEP 6: Laravel Optimization ===
-# echo "⚙️ Running Laravel optimizations..."
-# $PHP artisan config:clear
-# $PHP artisan cache:clear
-# $PHP artisan route:clear
-# $PHP artisan view:clear
-# $PHP artisan config:cache
-# $PHP artisan route:cache
-# $PHP artisan view:cache
-
-# === STEP 7: Database Migrations ===
+# === STEP 6: Database Migrations ===
 echo "🧬 Running migrations..."
 $PHP artisan migrate --force
 
-# === STEP 8: NPM Build ===
+# === STEP 7: NPM Build ===
 echo "🧱 Building frontend assets..."
 npm ci
 npm run build
 
-# === STEP 9: Permissions ===
+# === STEP 8: Permissions ===
 echo "🔐 Setting correct permissions..."
 sudo chown -R "$USER":"$USER" "$APP_DIR/storage"
 sudo chmod -R 775 "$APP_DIR/storage"
 sudo chmod -R 775 "$APP_DIR/bootstrap/cache"
 chmod -R 775 "$APP_DIR"
 
-# === STEP 10: Queue and Scheduling ===
+# === STEP 9: Queue and Scheduling ===
 echo "🔄 Checking if Queue commands exist..."
 if command -v $PHP artisan queue:restart > /dev/null 2>&1; then
     echo "🔄 Restarting queues if running..."
@@ -102,7 +92,7 @@ else
     echo "⚠️ schedule:run command not found. Skipping scheduled tasks."
 fi
 
-# === STEP 11: Storage Link ===
+# === STEP 10: Storage Link ===
 echo "🔗 Checking if storage:link command exists..."
 if command -v $PHP artisan storage:link > /dev/null 2>&1; then
     echo "🔗 Creating storage symlink..."
@@ -111,7 +101,7 @@ else
     echo "⚠️ storage:link command not found. Skipping storage symlink."
 fi
 
-# === STEP 12: Restart Services (PHP-FPM, Nginx) ===
+# === STEP 11: Restart Services (PHP-FPM, Nginx) ===
 echo "🔄 Restarting PHP-FPM and Nginx services..."
 sudo systemctl restart php8.3-fpm
 sudo systemctl restart nginx
