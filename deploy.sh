@@ -41,7 +41,9 @@ echo "📦 Installing Composer dependencies..."
 echo "🧹 Clearing Composer cache..."
 sudo -u "$USER" composer clear-cache
 
-# Install dependencies
+# Delete vendor and reinstall dependencies
+echo "🧹 Deleting vendor directory and reinstalling dependencies..."
+rm -rf vendor/
 sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader || {
     echo "❌ Composer install failed"
     exit 1
@@ -51,10 +53,6 @@ sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autol
 echo "🔧 Fixing permissions for vendor directory..."
 chown -R "$USER":"$USER" vendor/
 chmod -R 755 vendor/
-
-# Additional step to re-run composer if needed (for fallback)
-echo "❌ Running composer install again if initial attempt failed"
-sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # === STEP 5: Laravel Environment ===
 echo "🔐 Setting up Laravel..."
@@ -79,7 +77,17 @@ else
     echo "🔑 APP_KEY already exists, skipping key generation."
 fi
 
-# === STEP 6: Node Frontend Setup ===
+# === STEP 6: Clear Laravel Caches ===
+echo "🧹 Clearing Laravel caches..."
+
+sudo -u "$USER" $PHP artisan cache:clear
+sudo -u "$USER" $PHP artisan config:clear
+sudo -u "$USER" $PHP artisan route:clear
+sudo -u "$USER" $PHP artisan view:clear
+sudo -u "$USER" $PHP artisan clear-compiled
+sudo -u "$USER" $PHP artisan optimize:clear
+
+# === STEP 7: Node Frontend Setup ===
 echo "🧹 Cleaning old node_modules..."
 rm -rf node_modules package-lock.json
 
@@ -98,7 +106,7 @@ sudo -u "$USER" npm run build || {
     exit 1
 }
 
-# === STEP 7: Laravel Finalization ===
+# === STEP 8: Final Laravel Cleanup ===
 echo "🧼 Running Laravel cleanup..."
 sudo -u "$USER" $PHP artisan config:cache
 sudo -u "$USER" $PHP artisan route:cache
