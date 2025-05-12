@@ -8,6 +8,7 @@ SUB_DOMAIN="muhuri-web"
 DOMAIN="mkrdev.xyz"
 APP_DIR="/home/$USER/web/$SUB_DOMAIN.$DOMAIN/public_html"
 PHP="php8.3"
+COMPOSER="/usr/local/bin/composer"  # Update this if composer is installed elsewhere
 
 # === STEP 1: Navigate to App Directory ===
 cd "$APP_DIR" || {
@@ -24,18 +25,24 @@ fi
 # === STEP 3: Pull Latest Code ===
 echo "📥 Pulling latest changes from Git..."
 
-git config --global --add safe.directory $APP_DIR
+git config --global --add safe.directory "$APP_DIR"
 
 git reset --hard
 git pull origin main --ff
 
 # === STEP 4: PHP Dependencies ===
-composer install --no-interaction --prefer-dist --optimize-autoloader
-composer update --no-interaction
-echo "Installed composer dependencies"
+echo "📦 Installing Composer dependencies..."
+# Optional clean slate
+# rm -rf vendor
+
+sudo -u "$USER" $PHP $COMPOSER install --no-interaction --prefer-dist --optimize-autoloader || {
+    echo "❌ Composer install failed"
+    exit 1
+}
 
 # === STEP 5: Laravel Environment Setup ===
 echo "🔐 Setting up Laravel application..."
+
 if [ ! -f ".env" ]; then
     echo "📄 .env not found. Copying from example..."
     cp .env.example .env
@@ -43,30 +50,27 @@ fi
 
 echo "📂 Fixing permissions..."
 chmod -R ug+rwx storage bootstrap/cache
-chown -R www-data:www-data storage bootstrap/cache
+chown -R "$USER":www-data storage bootstrap/cache
+
+# === Fix vendor folder ownership ===
+echo "🔧 Fixing vendor folder ownership..."
+chown -R "$USER":www-data vendor
 
 touch storage/logs/laravel.log
 chmod 666 storage/logs/laravel.log
-chown www-data:www-data storage/logs/laravel.log
+chown "$USER":www-data storage/logs/laravel.log
 
 # === STEP 6: Laravel Artisan Commands ===
 echo "🔑 Generating application key..."
-$PHP artisan key:generate --force || { echo "❌ Artisan key generation failed"; exit 1; }
+$PHP artisan key:generate --force || {
+    echo "❌ Artisan key generation failed"
+    exit 1
+}
 
-echo "🧪 Running migrations & caching configs..."
+echo "🧪 Running migrations & caching..."
 $PHP artisan migrate --force
 $PHP artisan config:cache
 $PHP artisan route:cache
 $PHP artisan view:cache
 
-# === STEP 7: Node/Vue Build ===
-echo "🧱 Installing Node dependencies & building frontend..."
-if [ -d "node_modules" ]; then
-    echo "🧹 Cleaning old node_modules..."
-    rm -rf node_modules/
-fi
-
-npm ci || npm install || { echo "❌ NPM install failed"; exit 1; }
-npm run build || { echo "❌ NPM build failed"; exit 1; }
-
-echo "✅ Deployment finished successfully!"
+echo "✅ Deployment completed successfully!"
