@@ -60,14 +60,14 @@ sudo chmod -R 775 "$APP_DIR/storage"
 sudo -u "$USER" $PHP artisan backup:run --only-db --disable-notifications || echo "⚠️ Database backup skipped or failed"
 
 # === STEP 6: Laravel Optimization ===
-echo "⚙️ Running Laravel optimizations..."
-$PHP artisan config:clear
-$PHP artisan cache:clear
-$PHP artisan route:clear
-$PHP artisan view:clear
-$PHP artisan config:cache
-$PHP artisan route:cache
-$PHP artisan view:cache
+# echo "⚙️ Running Laravel optimizations..."
+# $PHP artisan config:clear
+# $PHP artisan cache:clear
+# $PHP artisan route:clear
+# $PHP artisan view:clear
+# $PHP artisan config:cache
+# $PHP artisan route:cache
+# $PHP artisan view:cache
 
 # === STEP 7: Database Migrations ===
 echo "🧬 Running migrations..."
