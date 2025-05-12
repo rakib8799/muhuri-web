@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Exit on error
+set -e
 set -o pipefail
 
 echo "🚀 Starting Laravel, Inertia & Vue.js deployment..."
@@ -19,7 +19,7 @@ cd "$APP_DIR" || {
     exit 1
 }
 
-# === STEP 2: Ensure Git is ready ===
+# === STEP 2: Ensure Git is Ready ===
 if [ ! -d ".git" ]; then
     echo "❌ No Git repository found."
     exit 1
@@ -30,41 +30,57 @@ git config --global --add safe.directory "$APP_DIR"
 git reset --hard
 git pull origin main --ff-only
 
-# === STEP 3: Fix Ownership Before Composer ===
-echo "🔧 Fixing permissions before Composer operations..."
+# === STEP 3: Fix Permissions Before Composer ===
+echo "🔧 Fixing permissions before Composer..."
 chown -R "$USER":"$USER" vendor/ storage/ bootstrap/cache/
 
-# === STEP 4: Composer Dependencies ===
+# === STEP 4: Install Composer Dependencies ===
 echo "📦 Installing Composer dependencies..."
 sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader || {
     echo "❌ Composer install failed"
     exit 1
 }
 
-# === STEP 5: Laravel Setup ===
-echo "🔐 Setting up Laravel app..."
+# === STEP 5: Laravel Environment Setup ===
+echo "🔐 Setting up Laravel..."
 
 if [ ! -f ".env" ]; then
     echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
 fi
 
+echo "🔧 Setting permissions for .env and storage..."
+chown "$USER":"www-data" .env
+chmod 664 .env
+
+chown -R "$USER":"www-data" storage bootstrap/cache
+chmod -R ug+rwx storage bootstrap/cache
+
+touch storage/logs/laravel.log
+chmod 666 storage/logs/laravel.log
+chown "$USER":"www-data" storage/logs/laravel.log
+
+# === STEP 6: Laravel Artisan Commands ===
 echo "🔑 Generating app key..."
 sudo -u "$USER" $PHP artisan key:generate --force
 
-# === STEP 6: Cache & Migrate ===
-echo "🧪 Running migrations and caching config/routes..."
+echo "🧪 Running migrations..."
 sudo -u "$USER" $PHP artisan migrate --force
+
+echo "📦 Caching configs, routes, and views..."
 sudo -u "$USER" $PHP artisan config:cache
 sudo -u "$USER" $PHP artisan route:cache
 sudo -u "$USER" $PHP artisan view:cache
 
-# === STEP 7: Permissions Fix ===
-echo "🧼 Final permission fixes..."
-chown -R www-data:www-data storage bootstrap/cache
-chmod -R ug+rwx storage bootstrap/cache
-touch storage/logs/laravel.log
-chmod 666 storage/logs/laravel.log
-chown www-data:www-data storage/logs/laravel.log
+# === STEP 7: Build Frontend ===
+echo "🧱 Building Vue.js frontend..."
+sudo -u "$USER" npm install
+sudo -u "$USER" npm run build
 
-echo "✅ Deployment completed successfully!"
+# === FINAL PERMISSIONS FIX (optional but recommended) ===
+echo "🔐 Resetting final file permissions..."
+chown -R "$USER":"www-data" .
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+
+echo "✅ Deployment complete!"
