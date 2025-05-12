@@ -47,15 +47,15 @@
                                     </div>
                                 </div>
                                 <!--begin::Heading-->
-Boss Ami
+
                                 <!--Mobile Number-->
-                                <!-- <div class="fv-row mb-8">
+                                <div class="fv-row mb-8">
                                     <Field class="form-control form-control-lg bg-transparent" type="text"
                                         name="mobile_number"
                                         autocomplete="off" v-model="formData.mobile_number" :placeholder="$t('auth.login.mobileNumb')"/>
                                     <ErrorMessage :errorMessage="formData.errors.mobile_number"/>
                                     <ErrorMessage :errorMessage="formData.errors.email"/>
-                                </div> -->
+                                </div>
 
                                 <!--Password-->
                                 <div class="fv-row mb-3">
