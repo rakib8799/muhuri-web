@@ -58,10 +58,10 @@ echo "🔑 Generating application key..."
 $PHP artisan key:generate --force || { echo "❌ Artisan key generation failed"; exit 1; }
 
 echo "🧪 Running migrations & caching configs..."
-$PHP artisan migrate --no-interaction || { echo "❌ Migrations failed"; exit 1; }
-$PHP artisan config:cache || { echo "❌ Config cache failed"; exit 1; }
-$PHP artisan route:cache || { echo "❌ Route cache failed"; exit 1; }
-$PHP artisan view:cache || { echo "❌ View cache failed"; exit 1; }
+$PHP artisan migrate --no-interaction
+$PHP artisan config:cache
+$PHP artisan route:cache
+$PHP artisan view:cache
 
 # === STEP 7: Node/Vue Build ===
 echo "🧱 Installing Node dependencies & building frontend..."
