@@ -30,13 +30,9 @@ git reset --hard
 git pull origin main --ff
 
 # === STEP 4: PHP Dependencies ===
-echo "📦 Installing PHP dependencies..."
-if [ -d "vendor" ]; then
-    echo "🧹 Removing old vendor directory..."
-    rm -rf vendor/
-fi
-
-composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction || { echo "❌ Composer install failed"; exit 1; }
+composer install --no-interaction --prefer-dist --optimize-autoloader
+composer update --no-interaction
+echo "Installed composer dependencies"
 
 # === STEP 5: Laravel Environment Setup ===
 echo "🔐 Setting up Laravel application..."
