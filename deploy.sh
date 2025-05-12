@@ -30,45 +30,11 @@ git config --global --add safe.directory "$APP_DIR"
 git reset --hard
 git pull origin main --ff-only
 
-# === STEP 3: Clear All Caches ===
-echo "🧹 Clearing all caches..."
+# === STEP 3: Permissions before Composer ===
+echo "🔧 Fixing permissions before Composer..."
+chown -R "$USER":"$USER" vendor/ storage/ bootstrap/cache/
 
-# Clear Composer cache to avoid old dependencies or corrupt cache
-echo "🧹 Clearing Composer cache..."
-sudo -u "$USER" composer clear-cache || {
-    echo "❌ Composer cache clear failed"
-    exit 1
-}
-
-# Clear Laravel cache and compiled files
-echo "🧹 Clearing Laravel caches..."
-sudo -u "$USER" $PHP artisan cache:clear
-sudo -u "$USER" $PHP artisan config:clear
-sudo -u "$USER" $PHP artisan route:clear
-sudo -u "$USER" $PHP artisan view:clear
-sudo -u "$USER" $PHP artisan clear-compiled
-sudo -u "$USER" $PHP artisan optimize:clear
-
-# === STEP 4: Clear Vendor Directory ===
-echo "🧹 Deleting vendor directory..."
-rm -rf vendor/
-
-# === STEP 5: Composer Install ===
-echo "📦 Installing Composer dependencies..."
-
-# Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
-echo "📦 Installing Composer dependencies..."
-sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev || {
-    echo "❌ Composer install failed"
-    exit 1
-}
-
-# Fix permissions for vendor directory after Composer install
-echo "🔧 Fixing permissions for vendor directory..."
-chown -R "$USER":"$USER" vendor/
-chmod -R 755 vendor/
-
-# === STEP 6: Laravel Environment ===
+# === STEP 4: Laravel Environment ===
 echo "🔐 Setting up Laravel..."
 
 if [ ! -f ".env" ]; then
@@ -91,7 +57,17 @@ else
     echo "🔑 APP_KEY already exists, skipping key generation."
 fi
 
-# === STEP 7: Node Frontend Setup ===
+# === STEP 5: Clear Laravel Caches ===
+echo "🧹 Clearing Laravel caches..."
+
+sudo -u "$USER" $PHP artisan cache:clear
+sudo -u "$USER" $PHP artisan config:clear
+sudo -u "$USER" $PHP artisan route:clear
+sudo -u "$USER" $PHP artisan view:clear
+sudo -u "$USER" $PHP artisan clear-compiled
+sudo -u "$USER" $PHP artisan optimize:clear
+
+# === STEP 6: Node Frontend Setup ===
 echo "🧹 Cleaning old node_modules..."
 rm -rf node_modules package-lock.json
 
@@ -109,6 +85,29 @@ sudo -u "$USER" npm run build || {
     echo "❌ Vite build failed"
     exit 1
 }
+
+# === STEP 7: Composer Dependencies ===
+echo "📦 Installing Composer dependencies..."
+
+# Clear Composer cache before install to avoid old dependencies or corrupt cache
+echo "🧹 Clearing Composer cache..."
+sudo -u "$USER" composer clear-cache
+
+# Delete vendor directory to force a fresh install
+echo "🧹 Deleting vendor directory..."
+rm -rf vendor/
+
+# Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
+echo "📦 Installing Composer dependencies..."
+sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev || {
+    echo "❌ Composer install failed"
+    exit 1
+}
+
+# Fix permissions in vendor directory after Composer install
+echo "🔧 Fixing permissions for vendor directory..."
+chown -R "$USER":"$USER" vendor/
+chmod -R 755 vendor/
 
 # === STEP 8: Final Laravel Cleanup ===
 echo "🧼 Running Laravel cleanup..."
