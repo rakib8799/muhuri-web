@@ -4,7 +4,7 @@ echo "🚀 Starting Laravel, Inertia & Vue.js deployment..."
 
 # === CONFIGURATION ===
 USER="muhuri"
-SUB_DOMAIN="muhuri-central-admin"
+SUB_DOMAIN="muhuri-web"
 DOMAIN="mkrdev.xyz"
 APP_DIR="/home/$USER/web/$SUB_DOMAIN.$DOMAIN/public_html"
 PHP="php8.3"
