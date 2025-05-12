@@ -30,12 +30,8 @@ git config --global --add safe.directory "$APP_DIR"
 git reset --hard
 git pull origin main --ff-only
 
-# === STEP 3: Clear Vendor Directory ===
-echo "🧹 Deleting vendor directory..."
-rm -rf vendor/
-
-# === STEP 4: Composer Install ===
-echo "📦 Installing Composer dependencies..."
+# === STEP 3: Clear All Caches ===
+echo "🧹 Clearing all caches..."
 
 # Clear Composer cache to avoid old dependencies or corrupt cache
 echo "🧹 Clearing Composer cache..."
@@ -43,6 +39,13 @@ sudo -u "$USER" composer clear-cache || {
     echo "❌ Composer cache clear failed"
     exit 1
 }
+
+# === STEP 4: Clear Vendor Directory ===
+echo "🧹 Deleting vendor directory..."
+rm -rf vendor/
+
+# === STEP 5: Composer Install ===
+echo "📦 Installing Composer dependencies..."
 
 # Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
 echo "📦 Installing Composer dependencies..."
@@ -56,16 +59,16 @@ echo "🔧 Fixing permissions for vendor directory..."
 chown -R "$USER":"$USER" vendor/
 chmod -R 755 vendor/
 
-# === STEP 5: Laravel Environment Setup ===
-echo "🔐 Setting up Laravel environment..."
+# === STEP 6: Laravel Environment ===
+echo "🔐 Setting up Laravel..."
 
 if [ ! -f ".env" ]; then
     echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
 fi
 
-# Fix file permissions for .env and directories
-echo "🔧 Fixing permissions for .env and directories..."
+# Permissions for .env and cache dirs
+echo "🔧 Fixing file permissions..."
 chown "$USER":"www-data" .env
 chmod 664 .env
 chown -R "$USER":"www-data" storage/ bootstrap/cache/
@@ -79,14 +82,14 @@ else
     echo "🔑 APP_KEY already exists, skipping key generation."
 fi
 
-# === STEP 6: Node Frontend Setup ===
+# === STEP 7: Node Frontend Setup ===
 echo "🧹 Cleaning old node_modules..."
 rm -rf node_modules package-lock.json
 
 echo "📦 Installing Node dependencies..."
 sudo -u "$USER" npm install
 
-# Clear Vite build dir to prevent EACCES errors
+# Clear Vite build dir to prevent EACCES
 echo "🧹 Cleaning Vite build cache..."
 rm -rf public/build/assets || true
 mkdir -p public/build/assets
@@ -98,16 +101,5 @@ sudo -u "$USER" npm run build || {
     exit 1
 }
 
-# === STEP 7: Clear Laravel Caches ===
-echo "🧹 Clearing all caches..."
-
-# Clear Laravel caches and compiled files
-echo "🧹 Clearing Laravel caches..."
-sudo -u "$USER" $PHP artisan cache:clear
-sudo -u "$USER" $PHP artisan config:clear
-sudo -u "$USER" $PHP artisan route:clear
-sudo -u "$USER" $PHP artisan view:clear
-sudo -u "$USER" $PHP artisan clear-compiled
-sudo -u "$USER" $PHP artisan optimize:clear
 
 echo "✅ Deployment completed successfully!"
