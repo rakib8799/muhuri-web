@@ -27,7 +27,7 @@ echo "📥 Pulling latest changes from Git..."
 git config --global --add safe.directory $APP_DIR
 
 git reset --hard
-git pull origin main --ff-only
+git pull origin main --ff
 
 # === STEP 4: PHP Dependencies ===
 echo "📦 Installing PHP dependencies..."
