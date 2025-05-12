@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Exit on error
+set -e
 set -o pipefail
 
 echo "🚀 Starting Laravel, Inertia & Vue.js deployment..."
@@ -41,43 +41,46 @@ sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autol
     exit 1
 }
 
-# === STEP 5: Laravel Environment Setup ===
-echo "🔐 Setting up Laravel..."
+# === STEP 5: Laravel Setup ===
+echo "🔐 Setting up Laravel app..."
 
 if [ ! -f ".env" ]; then
-    echo "📄 .env not found, copying from .env.example..."
+    echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
-fi
-
-# Fix permissions for .env and Laravel dirs
-chown "$USER":"www-data" .env
-chmod 664 .env
-chown -R "$USER":"www-data" storage bootstrap/cache
-chmod -R ug+rwx storage bootstrap/cache
-
-# Generate key only if APP_KEY is empty
-if grep -q "^APP_KEY=$" .env; then
+    chown "$USER":"www-data" .env
+    chmod 664 .env
     echo "🔑 Generating app key..."
     sudo -u "$USER" $PHP artisan key:generate
-else
-    echo "🔐 App key already set. Skipping generation."
 fi
 
-# === STEP 6: Clear & Optimize ===
-echo "🧹 Clearing cache & optimizing..."
+# === STEP 6: File Permissions ===
+echo "🔧 Setting Laravel folder permissions..."
+chown -R "$USER":"www-data" storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
+
+# === STEP 7: Node Modules and Vite Build ===
+echo "🧹 Cleaning up node_modules and old build..."
+rm -rf node_modules/
+rm -rf public/build/
+
+echo "📦 Installing npm packages..."
+sudo -u "$USER" npm install --legacy-peer-deps
+
+echo "🔧 Fixing build directory permissions..."
+mkdir -p public/build
+chown -R "$USER":"www-data" public/build
+chmod -R 775 public/build
+
+echo "🏗️ Running Vite build..."
+sudo -u "$USER" npm run build || {
+    echo "❌ Vite build failed"
+    exit 1
+}
+
+# === STEP 8: Laravel Commands ===
+echo "📊 Running Laravel optimizations..."
 sudo -u "$USER" $PHP artisan config:cache
 sudo -u "$USER" $PHP artisan route:cache
 sudo -u "$USER" $PHP artisan view:cache
 
-# === STEP 7: Node Modules & Frontend Build ===
-echo "🧼 Removing old node_modules..."
-rm -rf node_modules
-rm -rf package-lock.json
-
-echo "📦 Installing npm dependencies..."
-sudo -u "$USER" npm install
-
-echo "🔨 Building frontend assets..."
-sudo -u "$USER" npm run build
-
-echo "✅ Deployment finished successfully!"
+echo "✅ Deployment complete!"
