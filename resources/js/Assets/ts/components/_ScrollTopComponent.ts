@@ -37,9 +37,19 @@ class ScrollTopComponent {
   }
 
   private _handlers = () => {
-    let timer: number;
+    let timer: number | undefined;
+
+    const throttle = (callback: () => void, delay = 200) => {
+      if (timer !== undefined) return;
+
+      timer = window.setTimeout(() => {
+        callback();
+        timer = undefined;  // Reset timer after timeout
+      }, delay);
+    };
+
     window.addEventListener("scroll", () => {
-      throttle(timer, () => {
+      throttle(() => {
         this._scroll();
       });
     });

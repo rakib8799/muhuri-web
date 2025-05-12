@@ -2,42 +2,47 @@
 
 echo "🚀 Starting Laravel, Inertia & Vue.js deployment..."
 
-# Configurations
+# === CONFIGURATION ===
 USER="muhuri"
-SUB_DOMAIN="muhuri-web"
+SUB_DOMAIN="muhuri-central-admin"
 DOMAIN="mkrdev.xyz"
-
 APP_DIR="/home/$USER/web/$SUB_DOMAIN.$DOMAIN/public_html"
-PHP="php8.3"   # Ensure this matches your PHP version
+PHP="php8.3"
 
-# Navigate to app directory
+# === STEP 1: Navigate to App Directory ===
 cd "$APP_DIR" || {
     echo "❌ Failed to access $APP_DIR"
     exit 1
 }
 
-# Check if .git exists
+# === STEP 2: Check for Git Repository ===
 if [ ! -d ".git" ]; then
     echo "❌ No Git repository found in $APP_DIR"
     exit 1
 fi
 
+# === STEP 3: Pull Latest Code ===
 echo "📥 Pulling latest changes from Git..."
 git reset --hard
-git pull origin main
+git pull origin main --ff-only
 
-# Ensure the app is up-to-date with PHP dependencies
+# === STEP 4: PHP Dependencies ===
 echo "📦 Installing PHP dependencies..."
-rm -rf vendor/
-composer install --no-interaction --prefer-dist --optimize-autoloader
+if [ -d "vendor" ]; then
+    echo "🧹 Removing old vendor directory..."
+    rm -rf vendor/
+fi
 
-# Laravel specific configurations (environment file, key generation, etc.)
+composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
+
+# === STEP 5: Laravel Environment Setup ===
 echo "🔐 Setting up Laravel application..."
 if [ ! -f ".env" ]; then
+    echo "📄 .env not found. Copying from example..."
     cp .env.example .env
 fi
 
-# Set the correct permissions for Laravel storage and cache
+echo "📂 Fixing permissions..."
 chmod -R ug+rwx storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
 
@@ -45,28 +50,24 @@ touch storage/logs/laravel.log
 chmod 666 storage/logs/laravel.log
 chown www-data:www-data storage/logs/laravel.log
 
-echo "🔑 Generating application key if not set..."
+# === STEP 6: Laravel Artisan Commands ===
+echo "🔑 Generating application key..."
 $PHP artisan key:generate --force
 
-echo "🧪 Running migrations and setting up caches..."
+echo "🧪 Running migrations & caching configs..."
 $PHP artisan migrate --force
 $PHP artisan config:cache
 $PHP artisan route:cache
 $PHP artisan view:cache
 
-# Install and build Node.js (Vue.js) dependencies
-echo "🧱 Installing Node dependencies and building assets..."
+# === STEP 7: Node/Vue Build ===
+echo "🧱 Installing Node dependencies & building frontend..."
+if [ -d "node_modules" ]; then
+    echo "🧹 Cleaning old node_modules..."
+    rm -rf node_modules/
+fi
+
 npm ci || npm install
 npm run build
 
-# Optional: Clear and cache all assets to ensure it's up-to-date
-npm run prod
-
-echo "✅ Deployment complete!"
-
-# Restart services if required (e.g., Nginx or PHP-FPM)
-echo "🔄 Restarting PHP-FPM and Nginx..."
-systemctl restart php8.3-fpm
-systemctl restart nginx
-
-echo "🚀 Site deployed and services restarted successfully!"
+echo "✅ Deployment finished successfully!"
