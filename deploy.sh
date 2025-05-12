@@ -41,15 +41,18 @@ echo "📦 Installing Composer dependencies..."
 echo "🧹 Clearing Composer cache..."
 sudo -u "$USER" composer clear-cache
 
-# Delete vendor and reinstall dependencies
-echo "🧹 Deleting vendor directory and reinstalling dependencies..."
+# Delete vendor directory to force a fresh install
+echo "🧹 Deleting vendor directory..."
 rm -rf vendor/
-sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader || {
+
+# Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
+echo "📦 Installing Composer dependencies..."
+sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev || {
     echo "❌ Composer install failed"
     exit 1
 }
 
-# Fix permissions in vendor directory
+# Fix permissions in vendor directory after Composer install
 echo "🔧 Fixing permissions for vendor directory..."
 chown -R "$USER":"$USER" vendor/
 chmod -R 755 vendor/
