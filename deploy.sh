@@ -36,10 +36,25 @@ chown -R "$USER":"$USER" vendor/ storage/ bootstrap/cache/
 
 # === STEP 4: Composer Dependencies ===
 echo "📦 Installing Composer dependencies..."
+
+# Clear Composer cache before install to avoid old dependencies or corrupt cache
+echo "🧹 Clearing Composer cache..."
+sudo -u "$USER" composer clear-cache
+
+# Install dependencies
 sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader || {
     echo "❌ Composer install failed"
     exit 1
 }
+
+# Fix permissions in vendor directory
+echo "🔧 Fixing permissions for vendor directory..."
+chown -R "$USER":"$USER" vendor/
+chmod -R 755 vendor/
+
+# Additional step to re-run composer if needed (for fallback)
+echo "❌ Running composer install again if initial attempt failed"
+sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # === STEP 5: Laravel Environment ===
 echo "🔐 Setting up Laravel..."
