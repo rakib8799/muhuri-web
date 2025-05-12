@@ -56,16 +56,16 @@ echo "🔧 Fixing permissions for vendor directory..."
 chown -R "$USER":"$USER" vendor/
 chmod -R 755 vendor/
 
-# === STEP 5: Laravel Environment ===
-echo "🔐 Setting up Laravel..."
+# === STEP 5: Laravel Environment Setup ===
+echo "🔐 Setting up Laravel environment..."
 
 if [ ! -f ".env" ]; then
     echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
 fi
 
-# Permissions for .env and cache dirs
-echo "🔧 Fixing file permissions..."
+# Fix file permissions for .env and directories
+echo "🔧 Fixing permissions for .env and directories..."
 chown "$USER":"www-data" .env
 chmod 664 .env
 chown -R "$USER":"www-data" storage/ bootstrap/cache/
@@ -86,7 +86,7 @@ rm -rf node_modules package-lock.json
 echo "📦 Installing Node dependencies..."
 sudo -u "$USER" npm install
 
-# Clear Vite build dir to prevent EACCES
+# Clear Vite build dir to prevent EACCES errors
 echo "🧹 Cleaning Vite build cache..."
 rm -rf public/build/assets || true
 mkdir -p public/build/assets
@@ -98,10 +98,10 @@ sudo -u "$USER" npm run build || {
     exit 1
 }
 
-# === STEP 7: Clear All Caches ===
+# === STEP 7: Clear Laravel Caches ===
 echo "🧹 Clearing all caches..."
 
-# Clear Laravel cache and compiled files last
+# Clear Laravel caches and compiled files
 echo "🧹 Clearing Laravel caches..."
 sudo -u "$USER" $PHP artisan cache:clear
 sudo -u "$USER" $PHP artisan config:clear
@@ -109,12 +109,5 @@ sudo -u "$USER" $PHP artisan route:clear
 sudo -u "$USER" $PHP artisan view:clear
 sudo -u "$USER" $PHP artisan clear-compiled
 sudo -u "$USER" $PHP artisan optimize:clear
-
-# Clear Composer cache last
-echo "🧹 Clearing Composer cache..."
-sudo -u "$USER" composer clear-cache || {
-    echo "❌ Composer cache clear failed"
-    exit 1
-}
 
 echo "✅ Deployment completed successfully!"
