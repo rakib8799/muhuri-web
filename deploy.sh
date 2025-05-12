@@ -49,38 +49,35 @@ if [ ! -f ".env" ]; then
     cp .env.example .env
 fi
 
-# Fix .env Permissions
-echo "🔧 Fixing .env permissions..."
+# Fix permissions for .env and Laravel dirs
 chown "$USER":"www-data" .env
 chmod 664 .env
+chown -R "$USER":"www-data" storage bootstrap/cache
+chmod -R ug+rwx storage bootstrap/cache
 
-# Generate key only if missing
-if ! grep -q '^APP_KEY=' .env || grep -q '^APP_KEY=$' .env; then
+# Generate key only if APP_KEY is empty
+if grep -q "^APP_KEY=$" .env; then
     echo "🔑 Generating app key..."
     sudo -u "$USER" $PHP artisan key:generate
 else
-    echo "✅ APP_KEY already exists. Skipping key generation."
+    echo "🔐 App key already set. Skipping generation."
 fi
 
-# === STEP 6: Laravel Cache & Migrations ===
-echo "🧹 Clearing and caching config..."
-sudo -u "$USER" $PHP artisan config:clear
+# === STEP 6: Clear & Optimize ===
+echo "🧹 Clearing cache & optimizing..."
 sudo -u "$USER" $PHP artisan config:cache
 sudo -u "$USER" $PHP artisan route:cache
 sudo -u "$USER" $PHP artisan view:cache
 
-echo "🗃️ Running migrations..."
-sudo -u "$USER" $PHP artisan migrate --force
+# === STEP 7: Node Modules & Frontend Build ===
+echo "🧼 Removing old node_modules..."
+rm -rf node_modules
+rm -rf package-lock.json
 
-# === STEP 7: Frontend (Optional: if using npm/vue) ===
-echo "🎨 Building frontend assets (optional)..."
-# Uncomment if needed
+echo "📦 Installing npm dependencies..."
 sudo -u "$USER" npm install
+
+echo "🔨 Building frontend assets..."
 sudo -u "$USER" npm run build
 
-# === STEP 8: Final Permissions ===
-echo "🔐 Final permission fixes..."
-chown -R "$USER":"www-data" storage bootstrap/cache
-chmod -R ug+rwx storage bootstrap/cache
-
-echo "✅ Deployment completed successfully!"
+echo "✅ Deployment finished successfully!"
