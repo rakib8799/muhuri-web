@@ -16,6 +16,7 @@
         "sendgrid/sendgrid": "^8.1.2",
         "sentry/sentry-laravel": "^4.8",
         "spatie/laravel-activitylog": "^4.8",
+        "spatie/laravel-backup": "^9.3",
         "spatie/laravel-permission": "^6.7.0",
         "stichoza/google-translate-php": "^5.2",
         "tightenco/ziggy": "^1.8.2"
