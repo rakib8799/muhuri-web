@@ -110,10 +110,4 @@ sudo -u "$USER" npm run build || {
     exit 1
 }
 
-# === STEP 8: Final Laravel Cleanup ===
-# echo "🧼 Running Laravel cleanup..."
-# sudo -u "$USER" $PHP artisan config:cache
-# sudo -u "$USER" $PHP artisan route:cache
-# sudo -u "$USER" $PHP artisan view:cache
-
 echo "✅ Deployment completed successfully!"
