@@ -47,7 +47,7 @@ rm -rf vendor/
 
 # Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
 echo "📦 Installing Composer dependencies..."
-sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev || {
+sudo -u "$USER" composer install || {
     echo "❌ Composer install failed"
     exit 1
 }
