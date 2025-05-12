@@ -19,19 +19,19 @@ cd "$APP_DIR" || {
     exit 1
 }
 
-# === STEP 2: Ensure Git is ready ===
+# === STEP 2: Git Pull ===
 if [ ! -d ".git" ]; then
     echo "❌ No Git repository found."
     exit 1
 fi
 
-echo "📥 Pulling latest code from Git..."
+echo "📥 Pulling latest code..."
 git config --global --add safe.directory "$APP_DIR"
 git reset --hard
 git pull origin main --ff-only
 
-# === STEP 3: Fix Ownership Before Composer ===
-echo "🔧 Fixing permissions before Composer operations..."
+# === STEP 3: Permissions before Composer ===
+echo "🔧 Fixing permissions before Composer..."
 chown -R "$USER":"$USER" vendor/ storage/ bootstrap/cache/
 
 # === STEP 4: Composer Dependencies ===
@@ -41,47 +41,52 @@ sudo -u "$USER" composer install --no-interaction --prefer-dist --optimize-autol
     exit 1
 }
 
-# === STEP 5: Laravel Setup ===
-echo "🔐 Setting up Laravel app..."
+# === STEP 5: Laravel Environment ===
+echo "🔐 Setting up Laravel..."
 
 if [ ! -f ".env" ]; then
     echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
-    chown "$USER":"www-data" .env
-    chmod 664 .env
-    echo "🔑 Generating app key..."
-    sudo -u "$USER" $PHP artisan key:generate
 fi
 
-# === STEP 6: File Permissions ===
-echo "🔧 Setting Laravel folder permissions..."
-chown -R "$USER":"www-data" storage bootstrap/cache
-chmod -R 775 storage bootstrap/cache
+# Permissions for .env and cache dirs
+echo "🔧 Fixing file permissions..."
+chown "$USER":"www-data" .env
+chmod 664 .env
+chown -R "$USER":"www-data" storage/ bootstrap/cache/
+chmod -R 775 storage/ bootstrap/cache/
 
-# === STEP 7: Node Modules and Vite Build ===
-echo "🧹 Cleaning up node_modules and old build..."
-rm -rf node_modules/
-rm -rf package-lock.json
-rm -rf public/build/
+# Generate app key only if not set
+if ! grep -q '^APP_KEY=' .env; then
+    echo "🔑 Generating app key..."
+    sudo -u "$USER" $PHP artisan key:generate
+else
+    echo "🔑 APP_KEY already exists, skipping key generation."
+fi
 
-echo "📦 Installing npm packages..."
-sudo -u "$USER" npm install --legacy-peer-deps
+# === STEP 6: Node Frontend Setup ===
+echo "🧹 Cleaning old node_modules..."
+rm -rf node_modules package-lock.json
 
-echo "🔧 Fixing build directory permissions..."
-mkdir -p public/build
-chown -R "$USER":"www-data" public/build
-chmod -R 775 public/build
+echo "📦 Installing Node dependencies..."
+sudo -u "$USER" npm install
 
-echo "🏗️ Running Vite build..."
+# Clear Vite build dir to prevent EACCES
+echo "🧹 Cleaning Vite build cache..."
+rm -rf public/build/assets || true
+mkdir -p public/build/assets
+chown -R "$USER":"$USER" public/build
+
+echo "⚙️ Building frontend with Vite..."
 sudo -u "$USER" npm run build || {
     echo "❌ Vite build failed"
     exit 1
 }
 
-# === STEP 8: Laravel Commands ===
-echo "📊 Running Laravel optimizations..."
+# === STEP 7: Laravel Finalization ===
+echo "🧼 Running Laravel cleanup..."
 sudo -u "$USER" $PHP artisan config:cache
 sudo -u "$USER" $PHP artisan route:cache
 sudo -u "$USER" $PHP artisan view:cache
 
-echo "✅ Deployment complete!"
+echo "✅ Deployment completed successfully!"
