@@ -40,4 +40,5 @@ jobs:
         ssh-keyscan -H 155.133.23.233 >> ~/.ssh/known_hosts
 
     - name: Deploy via SSH
-      run: ssh -o StrictHostKeyChecking=no root@155.133.23.233 'bash -s' < ./deploy.sh
+      run: |
+        ssh -o StrictHostKeyChecking=no root@155.133.23.233 'bash -s' < ./deploy.sh

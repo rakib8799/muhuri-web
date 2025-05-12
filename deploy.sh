@@ -36,7 +36,7 @@ if [ -d "vendor" ]; then
     rm -rf vendor/
 fi
 
-composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
+composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction || { echo "❌ Composer install failed"; exit 1; }
 
 # === STEP 5: Laravel Environment Setup ===
 echo "🔐 Setting up Laravel application..."
@@ -55,13 +55,13 @@ chown www-data:www-data storage/logs/laravel.log
 
 # === STEP 6: Laravel Artisan Commands ===
 echo "🔑 Generating application key..."
-$PHP artisan key:generate --force
+$PHP artisan key:generate --force || { echo "❌ Artisan key generation failed"; exit 1; }
 
 echo "🧪 Running migrations & caching configs..."
-$PHP artisan migrate --no-interaction
-$PHP artisan config:cache
-$PHP artisan route:cache
-$PHP artisan view:cache
+$PHP artisan migrate --no-interaction || { echo "❌ Migrations failed"; exit 1; }
+$PHP artisan config:cache || { echo "❌ Config cache failed"; exit 1; }
+$PHP artisan route:cache || { echo "❌ Route cache failed"; exit 1; }
+$PHP artisan view:cache || { echo "❌ View cache failed"; exit 1; }
 
 # === STEP 7: Node/Vue Build ===
 echo "🧱 Installing Node dependencies & building frontend..."
@@ -70,7 +70,7 @@ if [ -d "node_modules" ]; then
     rm -rf node_modules/
 fi
 
-npm ci || npm install
-npm run build
+npm ci || npm install || { echo "❌ NPM install failed"; exit 1; }
+npm run build || { echo "❌ NPM build failed"; exit 1; }
 
 echo "✅ Deployment finished successfully!"
