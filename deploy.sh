@@ -30,8 +30,12 @@ git config --global --add safe.directory "$APP_DIR"
 git reset --hard
 git pull origin main --ff-only
 
-# === STEP 3: Clear All Caches ===
-echo "🧹 Clearing all caches..."
+# === STEP 3: Clear Vendor Directory ===
+echo "🧹 Deleting vendor directory..."
+rm -rf vendor/
+
+# === STEP 4: Composer Install ===
+echo "📦 Installing Composer dependencies..."
 
 # Clear Composer cache to avoid old dependencies or corrupt cache
 echo "🧹 Clearing Composer cache..."
@@ -39,13 +43,6 @@ sudo -u "$USER" composer clear-cache || {
     echo "❌ Composer cache clear failed"
     exit 1
 }
-
-# === STEP 4: Clear Vendor Directory ===
-echo "🧹 Deleting vendor directory..."
-rm -rf vendor/
-
-# === STEP 5: Composer Install ===
-echo "📦 Installing Composer dependencies..."
 
 # Run Composer install with the --no-dev flag to avoid installing unnecessary dev dependencies
 echo "📦 Installing Composer dependencies..."
@@ -59,16 +56,16 @@ echo "🔧 Fixing permissions for vendor directory..."
 chown -R "$USER":"$USER" vendor/
 chmod -R 755 vendor/
 
-# === STEP 6: Laravel Environment ===
-echo "🔐 Setting up Laravel..."
+# === STEP 5: Laravel Environment Setup ===
+echo "🔐 Setting up Laravel environment..."
 
 if [ ! -f ".env" ]; then
     echo "📄 .env not found, copying from .env.example"
     cp .env.example .env
 fi
 
-# Permissions for .env and cache dirs
-echo "🔧 Fixing file permissions..."
+# Fix file permissions for .env and directories
+echo "🔧 Fixing permissions for .env and directories..."
 chown "$USER":"www-data" .env
 chmod 664 .env
 chown -R "$USER":"www-data" storage/ bootstrap/cache/
@@ -82,14 +79,14 @@ else
     echo "🔑 APP_KEY already exists, skipping key generation."
 fi
 
-# === STEP 7: Node Frontend Setup ===
+# === STEP 6: Node Frontend Setup ===
 echo "🧹 Cleaning old node_modules..."
 rm -rf node_modules package-lock.json
 
 echo "📦 Installing Node dependencies..."
 sudo -u "$USER" npm install
 
-# Clear Vite build dir to prevent EACCES
+# Clear Vite build dir to prevent EACCES errors
 echo "🧹 Cleaning Vite build cache..."
 rm -rf public/build/assets || true
 mkdir -p public/build/assets
@@ -100,6 +97,5 @@ sudo -u "$USER" npm run build || {
     echo "❌ Vite build failed"
     exit 1
 }
-
 
 echo "✅ Deployment completed successfully!"
