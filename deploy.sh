@@ -8,7 +8,6 @@ SUB_DOMAIN="muhuri-web"
 DOMAIN="mkrdev.xyz"
 APP_DIR="/home/$USER/web/$SUB_DOMAIN.$DOMAIN/public_html"
 PHP="php8.3"
-COMPOSER="/usr/local/bin/composer"  # Update this if composer is installed elsewhere
 
 # === STEP 1: Navigate to App Directory ===
 cd "$APP_DIR" || {
@@ -32,10 +31,9 @@ git pull origin main --ff
 
 # === STEP 4: PHP Dependencies ===
 echo "📦 Installing Composer dependencies..."
-# Optional clean slate
-# rm -rf vendor
 
-sudo -u "$USER" $PHP $COMPOSER install --no-interaction --prefer-dist --optimize-autoloader || {
+# Use "runuser" to run as the proper user
+runuser -l "$USER" -c "cd $APP_DIR && composer install --no-interaction --prefer-dist --optimize-autoloader" || {
     echo "❌ Composer install failed"
     exit 1
 }
@@ -52,20 +50,13 @@ echo "📂 Fixing permissions..."
 chmod -R ug+rwx storage bootstrap/cache
 chown -R "$USER":www-data storage bootstrap/cache
 
-# === Fix vendor folder ownership ===
-echo "🔧 Fixing vendor folder ownership..."
-chown -R "$USER":www-data vendor
-
 touch storage/logs/laravel.log
 chmod 666 storage/logs/laravel.log
 chown "$USER":www-data storage/logs/laravel.log
 
 # === STEP 6: Laravel Artisan Commands ===
 echo "🔑 Generating application key..."
-$PHP artisan key:generate --force || {
-    echo "❌ Artisan key generation failed"
-    exit 1
-}
+$PHP artisan key:generate --force || { echo "❌ Artisan key generation failed"; exit 1; }
 
 echo "🧪 Running migrations & caching..."
 $PHP artisan migrate --force
@@ -73,4 +64,9 @@ $PHP artisan config:cache
 $PHP artisan route:cache
 $PHP artisan view:cache
 
-echo "✅ Deployment completed successfully!"
+# === STEP 7: Fix ownership ===
+echo "🔧 Fixing vendor/ permissions..."
+chown -R "$USER":www-data vendor
+chmod -R 755 vendor
+
+echo "✅ Deployment completed successfully."
