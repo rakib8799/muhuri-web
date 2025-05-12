@@ -48,7 +48,6 @@
                                 </div>
                                 <!--begin::Heading-->
 
-Boss
                                 <!--Mobile Number-->
                                 <div class="fv-row mb-8">
                                     <Field class="form-control form-control-lg bg-transparent" type="text"
