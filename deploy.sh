@@ -61,6 +61,7 @@ chmod -R 775 storage bootstrap/cache
 # === STEP 7: Node Modules and Vite Build ===
 echo "🧹 Cleaning up node_modules and old build..."
 rm -rf node_modules/
+rm -rf package-lock.json
 rm -rf public/build/
 
 echo "📦 Installing npm packages..."
