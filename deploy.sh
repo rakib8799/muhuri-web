@@ -75,8 +75,8 @@ sudo -u "$USER" $PHP artisan migrate --force
 # === STEP 7: Frontend (Optional: if using npm/vue) ===
 echo "🎨 Building frontend assets (optional)..."
 # Uncomment if needed
-# sudo -u "$USER" npm install
-# sudo -u "$USER" npm run build
+sudo -u "$USER" npm install
+sudo -u "$USER" npm run build
 
 # === STEP 8: Final Permissions ===
 echo "🔐 Final permission fixes..."
