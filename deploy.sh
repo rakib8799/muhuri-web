@@ -23,6 +23,9 @@ fi
 
 # === STEP 3: Pull Latest Code ===
 echo "📥 Pulling latest changes from Git..."
+
+git config --global --add safe.directory $APP_DIR
+
 git reset --hard
 git pull origin main --ff-only
 
