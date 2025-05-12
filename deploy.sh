@@ -58,7 +58,7 @@ echo "🔑 Generating application key..."
 $PHP artisan key:generate --force || { echo "❌ Artisan key generation failed"; exit 1; }
 
 echo "🧪 Running migrations & caching configs..."
-$PHP artisan migrate --no-interaction
+$PHP artisan migrate --force
 $PHP artisan config:cache
 $PHP artisan route:cache
 $PHP artisan view:cache
