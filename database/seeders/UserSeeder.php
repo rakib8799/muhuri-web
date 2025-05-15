@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'mobile_number' => '01332995033',
             'mobile_number_verified_at' => now(),
-            'password' => Hash::make('password'),
+            'password' => Hash::make('12345'),
             'remember_token' => Str::random(10)
         ]);
 
