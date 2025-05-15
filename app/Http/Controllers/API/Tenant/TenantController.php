@@ -56,11 +56,11 @@ class TenantController extends Controller
         $appEnv = config('app.env');
 
         if ($appEnv === 'production') {
-            $baseUrl = $validatedData['workspace'] . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
+            $baseUrl = $validatedData['workspace'] . '-' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         } else if ($appEnv === 'staging') {
-            $baseUrl = $validatedData['workspace'] . '.' . Constants::STAGING_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
+            $baseUrl = $validatedData['workspace'] . '-' . Constants::STAGING_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         } else {
-            $baseUrl = $validatedData['workspace'] . '.' . Constants::DEV_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
+            $baseUrl = $validatedData['workspace'] . '-' . Constants::DEV_SERVER . '.' . Constants::SUB_DOMAIN . '.' . Constants::DOMAIN;
         }
 
         return response()->json([
